@@ -54,6 +54,8 @@ There is already a GUI utility that helps us with this task called `input-remapp
 
 ## 5. Setup Shell Environment
 
+0. Download and install a nerd font from: https://www.nerdfonts.com/font-downloads
+
 1. Download the `setup_shell.sh` file from this folder
 2. Run `sh setup_shell.sh`
 
