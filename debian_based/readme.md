@@ -34,7 +34,7 @@ This to avoid wrongly clicking stuff while typing on your keyboard
 </td>
 </table>
 
-## Remap keyboard keys
+## 4. Remap keyboard keys
 
 There is already a GUI utility that helps us with this task called `input-remapper`
 
@@ -52,3 +52,11 @@ There is already a GUI utility that helps us with this task called `input-remapp
 </tr>
 </table>
 
+## 5. Setup Shell Environment
+
+1. Download the `setup_shell.sh` file from this folder
+2. Run `sh setup_shell.sh`
+
+Note: The command above will:
+- Install ZSH shell and make it default in the next boot
+- Install neovim with NvChad config
