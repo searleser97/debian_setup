@@ -39,8 +39,7 @@ This to avoid wrongly clicking stuff while typing on your keyboard
 There is already a GUI utility that helps us with this task called `input-remapper`
 
 1. Run `sudo nala install input-remapper`
-2. Open the app from your app launcher menu
-![image](https://github.com/searleser97/linux_setup/assets/5056411/26ea18a3-556e-4cf6-9893-27f1e872bdd4)
+2. Search for "Input Remapper" app in you app launcher menu and open it
 3. Open the app and configure the key mappings like in the following images
 
 <table>
