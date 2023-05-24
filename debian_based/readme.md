@@ -49,8 +49,8 @@ There is already a GUI utility that helps us with this task called `input-remapp
 <td><img src="https://github.com/searleser97/linux_setup/assets/5056411/544ee27f-bdc1-4286-850f-94b1da6f8b92" /></td>
 <td><img src="https://github.com/searleser97/linux_setup/assets/5056411/bebcdb91-ea4f-4959-95a2-651de3100a66" /></td>
 <td><img src="https://github.com/searleser97/linux_setup/assets/5056411/72cff501-630a-45fc-a7a9-051a4981b1e6" /></td>
+  <td><img src="https://github.com/searleser97/linux_setup/assets/5056411/25ffe456-825e-49ea-bc80-721b3b5da875" /></td>
 <td><img src="https://github.com/searleser97/linux_setup/assets/5056411/7e9d2e79-9f9f-4260-8caa-79b9f6522133" /></td>
-<td><img src="https://github.com/searleser97/linux_setup/assets/5056411/25ffe456-825e-49ea-bc80-721b3b5da875" /></td>
 </tr>
 </table>
 
