@@ -64,3 +64,18 @@ There is already a GUI utility that helps us with this task called `input-remapp
 Note: The command above will:
 - Install ZSH shell and make it default in the next boot
 - Install neovim with NvChad config
+
+## 6. Connect bluetooth headphones
+
+1. Make sure that your PC's bluetooth is visible to others
+<table>
+  <tr>
+    <th>1</th><th>2</th>
+  </tr>
+<tr>
+<td><img src="https://github.com/searleser97/linux_setup/assets/5056411/4326a48a-bfd7-4372-bfff-8bf78e27d243" /></td>
+  <td><img src="https://github.com/searleser97/linux_setup/assets/5056411/e7e1f63b-26d9-4ee0-9551-ea058dc994cf" /></td>
+</tr>
+</table>
+
+2. Follow usual steps to pair a new device (Click add new device, put your device in pairing mode, ...)
