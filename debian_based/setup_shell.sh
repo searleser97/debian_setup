@@ -29,6 +29,8 @@ pacstall -I telegram-bin
 sudo nala install grub-customizer
 # Install input remapper
 sudo nala install input-remapper
+# Apply mappings
+node ./mappings_setup.cjs
 # Install chrome
 pacstall -I google-chrome-deb
 
