@@ -1,6 +1,6 @@
 # Steps to setup a Debian Based Distro
 
-## 5. Setup Shell Environment
+## Setup Shell Environment
 
 0. Download and install a nerd font from: https://www.nerdfonts.com/font-downloads
 
@@ -14,13 +14,10 @@ Note: The command above will:
 - Install neovim-nightly with NvChad config
 - Install telegram (execute it for first time from terminal with the `telegram` command)
 - Install grub-customizer (to re-order boot entries)
-- Install input-remapper (to remap keyboard keys)
+- Install input-remapper and attemps to setup my mappings config (to remap keyboard keys)
+- Install chrome
 
-## 1. Install Chrome
-
-Chrome already published a ".deb" package in its website so we just need to go to https://www.google.com/chrome/ and intiutively follow the steps to get it installed.
-
-## 3. Setup Palm Detection in touchpad
+## Setup Palm Detection in touchpad
 
 This to avoid wrongly clicking stuff while typing on your keyboard
 
@@ -39,9 +36,10 @@ This to avoid wrongly clicking stuff while typing on your keyboard
 </td>
 </table>
 
-## 4. Remap keyboard keys
+## Remap keyboard keys
 
 There is already a GUI utility that helps us with this task called `input-remapper`
+The `setup_shell.sh` file attempts to execute the following steps programmatically, but it fails you can do it manually as follows.
 
 1. Run `sudo nala install input-remapper` (The `setup_shell.sh` file already installs it)
 2. Search for "Input Remapper" app in you app launcher menu and open it
@@ -59,7 +57,7 @@ There is already a GUI utility that helps us with this task called `input-remapp
 </tr>
 </table>
 
-## 6. Connect bluetooth headphones
+## Connect bluetooth headphones
 
 1. Make sure that your PC's bluetooth is visible to others
 <table>
