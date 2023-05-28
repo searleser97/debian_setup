@@ -1,3 +1,7 @@
+# Install pacstall
+sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
+# Install nala
+pacstall -I nala-deb
 # Install ZSHell
 sudo nala install zsh
 chsh -s $(which zsh)
