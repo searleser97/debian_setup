@@ -1,3 +1,7 @@
+# Install FiraCode Nerd Font
+mkdir -p ~/.fonts/f 
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.1/FiraMono.zip -P ~/.fonts/f
+unzip ~/.fonts/f/FiraCode.zip -d ~/.fonts/f/
 # Install pacstall
 sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
 # Install nala
