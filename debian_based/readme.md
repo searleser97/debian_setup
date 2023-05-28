@@ -8,6 +8,7 @@
 2. Run `sh setup_shell.sh`
 
 Note: The command above will:
+- Install FiraCode Mono Nerf Font (must setup in terminal app afterwards)
 - Install pacstall package manager (The AUR version of debian-based distros)
 - Install nala package manager for debian based distros
 - Install ZSH shell and make it default in the next boot
