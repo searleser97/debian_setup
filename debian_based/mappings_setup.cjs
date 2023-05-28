@@ -41,7 +41,14 @@ const mappings_obj = {
 fs.mkdirSync(default_preset_path, { recursive: true });
 fs.writeFileSync(`${default_preset_path}/${mappings_filename}`, mappings_obj);
 
-const default_config = JSON.parse(fs.readFileSync(`${config_path}/config.json`).toString());
+const default_config = (() => {
+  try {
+    return JSON.parse(fs.readFileSync(`${config_path}/config.json`).toString());
+  } catch(e) {
+    return {};
+  }
+})();
+
 const config = {
   autoload: {
     [default_keyboard_name]: mappings_filename
