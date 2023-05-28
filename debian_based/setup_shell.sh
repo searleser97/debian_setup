@@ -13,7 +13,6 @@ zsh
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo -e '# ZSH_THEME="amuse"\nZSH_THEME="jonathan"\n$(cat input)' > input
-
 # Install neovim nightly
 sudo snap install --edge nvim --classic
 # Install NvChad and neovim dependencies
@@ -24,7 +23,6 @@ nvm install node
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 # Install my NvChad Custom Config
 git clone https://github.com/searleser97/NvChadCustomConfig ~/.config/nvim/lua/custom
-
 # Install telegram
 pacstall -I telegram-bin
 # Install grub-customizer
