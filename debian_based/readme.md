@@ -1,25 +1,30 @@
 # Steps to setup a Debian Based Distro
 
+## 5. Setup Shell Environment
+
+0. Download and install a nerd font from: https://www.nerdfonts.com/font-downloads
+
+1. Download the `setup_shell.sh` file from this folder
+2. Run `sh setup_shell.sh`
+
+Note: The command above will:
+- Install pacstall package manager (The AUR version of debian-based distros)
+- Install nala package manager for debian based distros
+- Install ZSH shell and make it default in the next boot
+- Install neovim-nightly with NvChad config
+- Install telegram (execute it for first time from terminal with the `telegram` command)
+- Install grub-customizer (to re-order boot entries)
+- Install input-remapper (to remap keyboard keys)
+
 ## 1. Install Chrome
 
 Chrome already published a ".deb" package in its website so we just need to go to https://www.google.com/chrome/ and intiutively follow the steps to get it installed.
-
-## 2. Install Nala package manager
-
-Nala is a nice package manager, way better than "apt-get" build on top of "apt".
-
-1. Go to https://gitlab.com/volian/volian-archive/-/releases
-2. Download and install the file called volian-archive-keyring_x.x.x_all.deb
-3. Download and install the file called volian-archive-nala_x.x.x_all.deb
-4. Verify Installation by running `nala` in your terminal
-
-For more information about **nala** visit https://gitlab.com/volian/nala
 
 ## 3. Setup Palm Detection in touchpad
 
 This to avoid wrongly clicking stuff while typing on your keyboard
 
-1. Run `sudo nala install xserver-xorg-input-synaptics`
+1. Run `sudo nala install xserver-xorg-input-synaptics` (The `setup_shell.sh` file already installs it)
 2. Reboot your machine so that the new drivers load
 3. Adjust touchpad settings with the system settings GUI
 
@@ -38,7 +43,7 @@ This to avoid wrongly clicking stuff while typing on your keyboard
 
 There is already a GUI utility that helps us with this task called `input-remapper`
 
-1. Run `sudo nala install input-remapper`
+1. Run `sudo nala install input-remapper` (The `setup_shell.sh` file already installs it)
 2. Search for "Input Remapper" app in you app launcher menu and open it
 3. Open the app and configure the key mappings like in the following images
 
@@ -53,17 +58,6 @@ There is already a GUI utility that helps us with this task called `input-remapp
 <td><img src="https://github.com/searleser97/linux_setup/assets/5056411/7e9d2e79-9f9f-4260-8caa-79b9f6522133" /></td>
 </tr>
 </table>
-
-## 5. Setup Shell Environment
-
-0. Download and install a nerd font from: https://www.nerdfonts.com/font-downloads
-
-1. Download the `setup_shell.sh` file from this folder
-2. Run `sh setup_shell.sh`
-
-Note: The command above will:
-- Install ZSH shell and make it default in the next boot
-- Install neovim with NvChad config
 
 ## 6. Connect bluetooth headphones
 
