@@ -27,6 +27,8 @@ pacstall -I telegram-bin
 sudo nala install grub-customizer
 # Install input remapper
 sudo nala install input-remapper
+# Install chrome
+pacstall -I google-chrome-deb
 
 # reboot to be able to use the new default shell which is ZSH
 reboot
