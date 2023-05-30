@@ -1,6 +1,6 @@
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-echo -e '# ZSH_THEME="amuse"\nZSH_THEME="jonathan"\n\n$(cat ~/.zshrc)' > ~/.zshrc
+echo -e "# ZSH_THEME=\"amuse\"\nZSH_THEME=\"jonathan\"\n\n$(cat ~/.zshrc)" > ~/.zshrc
 # Install neovim nightly
 sudo snap install --edge nvim --classic
 # Install NvChad and neovim dependencies
