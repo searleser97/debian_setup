@@ -13,13 +13,14 @@ echo '# remove this comment' > ~/.zshrc
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo -e "# ZSH_THEME=\"amuse\"\nZSH_THEME=\"jonathan\"\n\n$(cat ~/.zshrc)" > ~/.zshrc
+# Install nodejs
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | zsh # installs NVM (Node Version Manager)
+source ~/.zshrc
+nvm install node
 # Install neovim nightly
 sudo snap install --edge nvim --classic
 # Install NvChad and neovim dependencies
 sudo nala install ripgrep python3-venv xclip -y
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | zsh # installs NVM (Node Version Manager)
-source ~/.zshrc
-nvm install node
 # Install NvChad
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 # Install my NvChad Custom Config
