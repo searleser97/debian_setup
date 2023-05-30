@@ -47,6 +47,16 @@ pacstall -I telegram-bin -P
 sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
 sudo usermod -aG nordvpn $USER
 
+# Install wine
+sudo dpkg --add-architecture i386
+sudo mkdir -pm755 /etc/apt/keyrings
+sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
+sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
+sudo apt update
+sudo apt install libpoppler-glib8:{i386,amd64}=22.02.0-2ubuntu0.1
+sudo nala install --install-recommends winehq-stable
+winecfg
+
 # reboot to be able to use the new default shell which is ZSH and for nordvpn to work properly
 reboot
 
