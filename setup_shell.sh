@@ -31,7 +31,10 @@ sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 sudo nala install grub-customizer -y
 # Install input remapper
 sudo nala install input-remapper -y
-input-remapper-gtk &
+echo "The following command will open input-remapper UI"
+echo "proceed to enter the requested password in the UI and then close the GUI to continue with the execution of this script"
+read -p "[Press ENTER to continue]"
+input-remapper-gtk # after entering root passwd in the UI, must close the program to continue with script execution
 # Apply mappings
 node ./mappings_setup.cjs
 # Install chrome
