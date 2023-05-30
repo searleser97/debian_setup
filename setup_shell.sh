@@ -30,8 +30,8 @@ git clone https://github.com/searleser97/NvChadCustomConfig ~/.config/nvim/lua/c
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 sudo nala install grub-customizer -y
 # Install input remapper
-sudo nala install input-remapper-gtk -y
-input-remapper &
+sudo nala install input-remapper -y
+input-remapper-gtk &
 # Apply mappings
 node ./mappings_setup.cjs
 # Install chrome
