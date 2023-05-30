@@ -31,7 +31,7 @@ sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 sudo nala install grub-customizer -y
 # Install input remapper
 sudo nala install input-remapper -y
-input-remapper &;disown
+input-remapper &
 # Apply mappings
 node ./mappings_setup.cjs
 # Install chrome
