@@ -10,4 +10,4 @@ pacstall -I nala-deb
 sudo nala install zsh
 chsh -s $(which zsh)
 echo '# remove this comment' > ~/.zshrc
-echo 'source ./setup_shell_2.sh' | zsh
+zsh -c "source ./setup_shell_2.sh"
