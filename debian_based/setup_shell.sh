@@ -17,7 +17,8 @@ echo -e '# ZSH_THEME="amuse"\nZSH_THEME="jonathan"\n$(cat input)' > input
 sudo snap install --edge nvim --classic
 # Install NvChad and neovim dependencies
 sudo nala install ripgrep python3-venv xclip
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash # installs NVM (Node Version Manager)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | zsh # installs NVM (Node Version Manager)
+source ~/.zshrc
 nvm install node
 # Install NvChad
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
