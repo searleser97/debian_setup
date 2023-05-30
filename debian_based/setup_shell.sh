@@ -16,6 +16,7 @@ echo -e "# ZSH_THEME=\"amuse\"\nZSH_THEME=\"jonathan\"\n\n$(cat ~/.zshrc)" > ~/.
 # Install nodejs
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash # installs NVM (Node Version Manager)
 source ./my_bashrc
+cat ./my_bashrc >> ~/.zshrc
 nvm install node
 # Install neovim nightly
 sudo snap install --edge nvim --classic
