@@ -15,6 +15,7 @@ git clone https://github.com/searleser97/NvChadCustomConfig ~/.config/nvim/lua/c
 # Install telegram
 pacstall -I telegram-bin
 # Install grub-customizer
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 sudo nala install grub-customizer
 # Install input remapper
 sudo nala install input-remapper
