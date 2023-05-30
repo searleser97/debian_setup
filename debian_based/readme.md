@@ -3,7 +3,7 @@
 ## Setup Shell Environment
 
 1. Download the `setup_shell.sh` file from this folder
-2. Run `sh setup_shell.sh`
+2. Run `source setup_shell.sh`
 
 Note: The command above will:
 - Install FiraCode Mono Nerd Font (must setup in terminal app afterwards)
