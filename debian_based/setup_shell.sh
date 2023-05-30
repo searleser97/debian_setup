@@ -5,7 +5,7 @@ unzip ~/.fonts/f/FiraMono.zip -d ~/.fonts/f/
 # Install pacstall
 sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
 # Install nala
-pacstall -I nala-deb
+pacstall -I nala-deb -P
 # Install ZSHell
 sudo nala install zsh
 chsh -s $(which zsh)
