@@ -37,11 +37,16 @@ read -p "[Press ENTER to continue]"
 input-remapper-gtk # after entering root passwd in the UI, must close the program to continue with script execution
 # Apply mappings
 node ./mappings_setup.cjs
+# Add my custom pacstall repo
+pacstall -A https://raw.githubusercontent.com/searleser97/pacstall-packages/main
 # Install chrome
-pacstall -I google-chrome-deb -P
+pacstall -I google-chrome-searleser97 -P
 # Install telegram
 pacstall -I telegram-bin -P
+# Install nordvpn
+sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
+sudo usermod -aG nordvpn $USER
 
-# reboot to be able to use the new default shell which is ZSH
+# reboot to be able to use the new default shell which is ZSH and for nordvpn to work properly
 reboot
 
