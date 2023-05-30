@@ -14,8 +14,8 @@ echo '# remove this comment' > ~/.zshrc
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo -e "# ZSH_THEME=\"amuse\"\nZSH_THEME=\"jonathan\"\n\n$(cat ~/.zshrc)" > ~/.zshrc
 # Install nodejs
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | zsh # installs NVM (Node Version Manager)
-source ~/.zshrc
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash # installs NVM (Node Version Manager)
+source ./my_bashrc
 nvm install node
 # Install neovim nightly
 sudo snap install --edge nvim --classic
@@ -40,3 +40,4 @@ pacstall -I google-chrome-deb -P
 
 # reboot to be able to use the new default shell which is ZSH
 reboot
+
