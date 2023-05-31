@@ -12,11 +12,10 @@ chsh -s $(which zsh)
 echo '# remove this comment' > ~/.zshrc
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-echo -e "# ZSH_THEME=\"amuse\"\nZSH_THEME=\"jonathan\"\n\n$(cat ~/.zshrc)" > ~/.zshrc
+cat ./my_zshrc > ~/.zshrc
 # Install nodejs
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash # installs NVM (Node Version Manager)
-source ./my_bashrc
-cat ./my_bashrc >> ~/.zshrc
+source ./my_zshrc
 nvm install node
 # Install neovim nightly
 sudo snap install --edge nvim --classic
