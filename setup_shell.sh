@@ -24,6 +24,7 @@ sudo nala install ripgrep python3-venv xclip -y
 # Install NvChad
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 # Install my NvChad Custom Config
+rm -R ~/.config/nvim/lua/custom/
 git clone https://github.com/searleser97/NvChadCustomConfig ~/.config/nvim/lua/custom
 # Install grub-customizer
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer
