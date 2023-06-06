@@ -56,6 +56,9 @@ sudo apt install libpoppler-glib8:{i386,amd64}=22.02.0-2ubuntu0.1
 sudo nala install --install-recommends winehq-stable
 winecfg
 
+mkdir ~/.config/autostart/
+cp after_first_restart.* ~/.config/autostart/
+chmod +x ~/.config/autostart/after_first_restart.*
 # reboot to be able to use the new default shell which is ZSH and for nordvpn to work properly
 reboot
 

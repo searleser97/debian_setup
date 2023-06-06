@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=After First Restart Script
+Exec=~/.config/autostart/after_first_restart.sh
