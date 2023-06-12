@@ -37,7 +37,7 @@ input-remapper-gtk # after entering root passwd in the UI, must close the progra
 # Apply mappings
 node ./mappings_setup.cjs
 # Add my custom pacstall repo
-pacstall -A https://raw.githubusercontent.com/searleser97/pacstall-packages/main
+pacstall -A https://raw.githubusercontent.com/searleser97/pacstall-packages/main -P
 # Install chrome
 pacstall -I google-chrome-searleser97 -P
 # Install telegram
@@ -53,7 +53,7 @@ sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-bui
 sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
 sudo apt update
 sudo apt install libpoppler-glib8:{i386,amd64}=22.02.0-2ubuntu0.1
-sudo nala install --install-recommends winehq-stable
+sudo nala install --install-recommends winehq-stable -y
 winecfg
 
 mkdir ~/.config/autostart/
