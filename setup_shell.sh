@@ -34,20 +34,14 @@ sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y
 sudo nala install grub-customizer -y
 # Install touchpad drivers
 sudo nala install xserver-xorg-input-synaptics -y
-# Install input remapper
-sudo nala install input-remapper -y
-echo "The following command will open input-remapper UI"
-echo "proceed to enter the requested password in the UI and then close the GUI to continue with the execution of this script"
-read -p "[Press ENTER to continue]"
-input-remapper-gtk # after entering root passwd in the UI, must close the program to continue with script execution
-# Apply mappings
-node ./mappings_setup.cjs
 # Add my custom pacstall repo
 pacstall -A https://raw.githubusercontent.com/searleser97/pacstall-packages/main -P
 # Install chrome
 pacstall -I google-chrome-searleser97 -P
+read -p "[Press ENTER to continue]"
 # Install telegram
 pacstall -I telegram-bin -P
+read -p "[Press ENTER to continue]"
 # Install nordvpn
 sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
 sudo usermod -aG nordvpn $USER
@@ -68,6 +62,15 @@ chmod +x ~/.config/autostart/after_first_restart.desktop
 chmod +x ./after_first_restart.sh
 
 echo "Exec=xterm -e 'source ~/.config/autostart/after_first_restart.sh'" >> ~/.config/autostart/after_first_restart.desktop
+
+# Install input remapper
+sudo nala install input-remapper -y
+echo "The following command will open input-remapper UI"
+echo "proceed to enter the requested password in the UI and then close the GUI to continue with the execution of this script"
+read -p "[Press ENTER to continue]"
+input-remapper-gtk # after entering root passwd in the UI, must close the program to continue with script execution
+# Apply mappings
+node ./mappings_setup.cjs
 
 # reboot to be able to use the new default shell which is ZSH and for nordvpn to work properly
 reboot
