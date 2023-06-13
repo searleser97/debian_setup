@@ -51,8 +51,8 @@ sudo mkdir -pm755 /etc/apt/keyrings
 sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
 sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
 sudo apt update
-sudo apt install libpoppler-glib8:{i386,amd64}=22.02.0-2ubuntu0.1 -y
-sudo nala install --install-recommends winehq-stable -y
+sudo apt install libpoppler-glib8:{i386,amd64}=22.02.0-2ubuntu0.1
+sudo nala install --install-recommends winehq-stable
 winecfg
 
 mkdir ~/.config/autostart/
