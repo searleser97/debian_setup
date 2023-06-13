@@ -2,4 +2,3 @@
 [Desktop Entry]
 Type=Application
 Name=After First Restart Script
-Exec=xterm -e 'source ~/.config/autostart/after_first_restart.sh'
