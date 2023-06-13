@@ -35,12 +35,10 @@ sudo nala install grub-customizer -y
 sudo nala install xserver-xorg-input-synaptics -y
 # Install telegram
 pacstall -I telegram-bin -P
-read -p "[Press ENTER to continue]"
 # Add my custom pacstall repo
 pacstall -A https://raw.githubusercontent.com/searleser97/pacstall-packages/main
 # Install chrome
 pacstall -I google-chrome-searleser97 -P
-read -p "[Press ENTER to continue]"
 # Install nordvpn
 sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
 sudo usermod -aG nordvpn $USER
@@ -55,12 +53,14 @@ sudo apt install libpoppler-glib8:{i386,amd64}=22.02.0-2ubuntu0.1
 sudo nala install --install-recommends winehq-stable
 winecfg
 
-mkdir ~/.config/autostart/
-cp after_first_restart.desktop ~/.config/autostart/
-chmod +x ~/.config/autostart/after_first_restart.desktop
+AUTOSTARTDIR=/etc/xdg/autostart
+echo "creating temporary autostart file in $AUTOSTARTDIR"
+sudo mkdir $AUTOSTARTDIR
+cp after_first_restart.desktop 
+chmod +x $(AUTOSTARTDIR)/after_first_restart.desktop
 chmod +x ./after_first_restart.sh
 
-echo "Exec=xterm -e 'source $(pwd)/after_first_restart.sh'" >> ~/.config/autostart/after_first_restart.desktop
+echo "Exec=xterm -e 'source $(pwd)/after_first_restart.sh'" >> $(AUTOSTARTDIR)/after_first_restart.desktop
 
 # Install input remapper
 sudo nala install input-remapper -y
@@ -71,6 +71,7 @@ input-remapper-gtk # after entering root passwd in the UI, must close the progra
 # Apply mappings
 node ./mappings_setup.cjs
 
+cat ./my_zshrc > ~/.zshrc
 # reboot to be able to use the new default shell which is ZSH and for nordvpn to work properly
 reboot
 
