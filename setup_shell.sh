@@ -33,13 +33,13 @@ sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y
 sudo nala install grub-customizer -y
 # Install touchpad drivers
 sudo nala install xserver-xorg-input-synaptics -y
+# Install telegram
+pacstall -I telegram-bin -P
+read -p "[Press ENTER to continue]"
 # Add my custom pacstall repo
 pacstall -A https://raw.githubusercontent.com/searleser97/pacstall-packages/main
 # Install chrome
 pacstall -I google-chrome-searleser97 -P
-read -p "[Press ENTER to continue]"
-# Install telegram
-pacstall -I telegram-bin -P
 read -p "[Press ENTER to continue]"
 # Install nordvpn
 sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
