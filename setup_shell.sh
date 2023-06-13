@@ -60,7 +60,7 @@ cp after_first_restart.desktop ~/.config/autostart/
 chmod +x ~/.config/autostart/after_first_restart.desktop
 chmod +x ./after_first_restart.sh
 
-echo "Exec=xterm -e 'source ~/.config/autostart/after_first_restart.sh'" >> ~/.config/autostart/after_first_restart.desktop
+echo "Exec=xterm -e 'source $(pwd)/after_first_restart.sh'" >> ~/.config/autostart/after_first_restart.desktop
 
 # Install input remapper
 sudo nala install input-remapper -y
