@@ -11,7 +11,6 @@ sudo nala install xterm -y
 # Install ZSHell
 sudo nala install zsh -y
 chsh -s $(which zsh)
-cat ./my_zshrc > ~/.zshrc
 # Install nodejs
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash # installs NVM (Node Version Manager)
 
