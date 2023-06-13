@@ -33,7 +33,7 @@ git clone https://github.com/searleser97/NvChadCustomConfig ~/.config/nvim/lua/c
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y
 sudo nala install grub-customizer -y
 # Install touchpad drivers
-sudo nala install xserver-xorg-input-synaptics
+sudo nala install xserver-xorg-input-synaptics -y
 # Install input remapper
 sudo nala install input-remapper -y
 echo "The following command will open input-remapper UI"
