@@ -53,7 +53,7 @@ sudo apt install libpoppler-glib8:{i386,amd64}=22.02.0-2ubuntu0.1
 sudo nala install --install-recommends winehq-stable
 winecfg
 
-AUTOSTARTDIR=/etc/xdg/autostart
+set AUTOSTARTDIR="/etc/xdg/autostart"
 echo "creating temporary autostart file in $AUTOSTARTDIR"
 sudo mkdir $AUTOSTARTDIR
 cp after_first_restart.desktop 
