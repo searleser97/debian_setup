@@ -6,13 +6,19 @@ unzip ~/.fonts/f/FiraMono.zip -d ~/.fonts/f/
 sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
 # Install nala
 pacstall -I nala-deb -P
+# Install xterm
+sudo nala install xterm -y
 # Install ZSHell
 sudo nala install zsh -y
 chsh -s $(which zsh)
 cat ./my_zshrc > ~/.zshrc
 # Install nodejs
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash # installs NVM (Node Version Manager)
-source ./my_zshrc
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 nvm install node
 # Install neovim nightly
 sudo snap install --edge nvim --classic
@@ -24,7 +30,7 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 rm -R ~/.config/nvim/lua/custom/
 git clone https://github.com/searleser97/NvChadCustomConfig ~/.config/nvim/lua/custom
 # Install grub-customizer
-sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y
 sudo nala install grub-customizer -y
 # Install touchpad drivers
 sudo nala install xserver-xorg-input-synaptics
@@ -52,13 +58,17 @@ sudo mkdir -pm755 /etc/apt/keyrings
 sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
 sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
 sudo apt update
-sudo apt install libpoppler-glib8:{i386,amd64}=22.02.0-2ubuntu0.1
+sudo apt install libpoppler-glib8:{i386,amd64}=22.02.0-2ubuntu0.1 -y
 sudo nala install --install-recommends winehq-stable -y
 winecfg
 
 mkdir ~/.config/autostart/
-cp after_first_restart.* ~/.config/autostart/
-chmod +x ~/.config/autostart/after_first_restart.*
+cp after_first_restart.desktop ~/.config/autostart/
+chmod +x ~/.config/autostart/after_first_restart.desktop
+chmod +x ./after_first_restart.sh
+
+echo "Exec=xterm -e 'source ~/.config/autostart/after_first_restart.sh'" >> ~/.config/autostart/after_first_restart.desktop
+
 # reboot to be able to use the new default shell which is ZSH and for nordvpn to work properly
 reboot
 

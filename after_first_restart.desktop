@@ -1,4 +1,5 @@
+#!/usr/bin/env xdg-open
 [Desktop Entry]
 Type=Application
 Name=After First Restart Script
-Exec=~/.config/autostart/after_first_restart.sh
+Exec=xterm -e 'source ~/.config/autostart/after_first_restart.sh'
