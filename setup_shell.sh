@@ -56,11 +56,11 @@ winecfg
 set AUTOSTARTDIR="/etc/xdg/autostart"
 echo "creating temporary autostart file in $AUTOSTARTDIR"
 sudo mkdir $AUTOSTARTDIR
-cp after_first_restart.desktop 
-chmod +x $(AUTOSTARTDIR)/after_first_restart.desktop
+sudo cp after_first_restart.desktop 
+sudo chmod +x $AUTOSTARTDIR/after_first_restart.desktop
 chmod +x ./after_first_restart.sh
 
-echo "Exec=xterm -e 'source $(pwd)/after_first_restart.sh'" >> $(AUTOSTARTDIR)/after_first_restart.desktop
+sudo echo "Exec=xterm -e 'source $(pwd)/after_first_restart.sh'" >> $AUTOSTARTDIR/after_first_restart.desktop
 
 # Install input remapper
 sudo nala install input-remapper -y
