@@ -5,7 +5,6 @@ sudo mkdir $AUTOSTARTDIR
 sudo cp after_first_restart.desktop $AUTOSTARTDIR
 chmod +x ./after_first_restart.sh
 echo "Exec=xterm -e 'source $(pwd)/after_first_restart.sh'" | sudo tee -a $AUTOSTARTDIR/after_first_restart.desktop
-read -p "[Press ENTER to continue]"
 
 # Install FiraCode Nerd Font
 mkdir -p ~/.fonts/f 
