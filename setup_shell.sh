@@ -3,9 +3,7 @@ AUTOSTARTDIR="/etc/xdg/autostart"
 echo "creating temporary autostart file in $AUTOSTARTDIR"
 sudo mkdir $AUTOSTARTDIR
 sudo cp after_first_restart.desktop $AUTOSTARTDIR
-sudo chmod +x $AUTOSTARTDIR/after_first_restart.desktop
 chmod +x ./after_first_restart.sh
-
 sudo echo "Exec=xterm -e 'source $(pwd)/after_first_restart.sh'" >> $AUTOSTARTDIR/after_first_restart.desktop
 read -p "[Press ENTER to continue]"
 
