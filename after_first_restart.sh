@@ -1,8 +1,9 @@
 #!/bin/zsh
 # Install oh-my-zsh
-xterm -hold -e 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc'
+xterm -e zsh -c 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc' & disown
 # Complete NVChad installation
-xterm -e 'nvim'
+xterm -e zsh -c 'nvim' & disown
 # Remove autostart script
-rm ~/.config/autostart/after_first_restart.*
-xterm -hold -e 'read -p "[Press ENTER to continue]"'
+AUTOSTARTDIR="/etc/xdg/autostart"
+rm $AUTOSTARTDIR/after_first_restart.*
+xterm -e zsh -c 'read -p "[Press ENTER to continue]"'
