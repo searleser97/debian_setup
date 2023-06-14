@@ -5,5 +5,5 @@ xterm -e zsh -c 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/o
 xterm -e zsh -c 'nvim' & disown
 # Remove autostart script
 AUTOSTARTDIR="/etc/xdg/autostart"
-rm $AUTOSTARTDIR/after_first_restart.*
+sudo rm $AUTOSTARTDIR/after_first_restart.*
 xterm -e zsh -c 'read -p "[Press ENTER to continue]"'
