@@ -56,7 +56,7 @@ winecfg
 set AUTOSTARTDIR="/etc/xdg/autostart"
 echo "creating temporary autostart file in $AUTOSTARTDIR"
 sudo mkdir $AUTOSTARTDIR
-sudo cp after_first_restart.desktop 
+sudo cp after_first_restart.desktop $AUTOSTARTDIR
 sudo chmod +x $AUTOSTARTDIR/after_first_restart.desktop
 chmod +x ./after_first_restart.sh
 
