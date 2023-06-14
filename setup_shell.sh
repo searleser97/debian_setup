@@ -1,3 +1,14 @@
+# setup first restart script
+AUTOSTARTDIR="/etc/xdg/autostart"
+echo "creating temporary autostart file in $AUTOSTARTDIR"
+sudo mkdir $AUTOSTARTDIR
+sudo cp after_first_restart.desktop $AUTOSTARTDIR
+sudo chmod +x $AUTOSTARTDIR/after_first_restart.desktop
+chmod +x ./after_first_restart.sh
+
+sudo echo "Exec=xterm -e 'source $(pwd)/after_first_restart.sh'" >> $AUTOSTARTDIR/after_first_restart.desktop
+read -p "[Press ENTER to continue]"
+
 # Install FiraCode Nerd Font
 mkdir -p ~/.fonts/f 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.1/FiraMono.zip -P ~/.fonts/f
@@ -51,23 +62,14 @@ sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/
 sudo apt update
 sudo apt install libpoppler-glib8:{i386,amd64}=22.02.0-2ubuntu0.1
 sudo nala install --install-recommends winehq-stable
-winecfg
-
-set AUTOSTARTDIR="/etc/xdg/autostart"
-echo "creating temporary autostart file in $AUTOSTARTDIR"
-sudo mkdir $AUTOSTARTDIR
-sudo cp after_first_restart.desktop $AUTOSTARTDIR
-sudo chmod +x $AUTOSTARTDIR/after_first_restart.desktop
-chmod +x ./after_first_restart.sh
-
-sudo echo "Exec=xterm -e 'source $(pwd)/after_first_restart.sh'" >> $AUTOSTARTDIR/after_first_restart.desktop
+# winecfg
 
 # Install input remapper
 sudo nala install input-remapper -y
-echo "The following command will open input-remapper UI"
-echo "proceed to enter the requested password in the UI and then close the GUI to continue with the execution of this script"
-read -p "[Press ENTER to continue]"
-input-remapper-gtk # after entering root passwd in the UI, must close the program to continue with script execution
+# echo "The following command will open input-remapper UI"
+# echo "proceed to enter the requested password in the UI and then close the GUI to continue with the execution of this script"
+# read -p "[Press ENTER to continue]"
+# input-remapper-gtk # after entering root passwd in the UI, must close the program to continue with script execution
 # Apply mappings
 node ./mappings_setup.cjs
 
