@@ -41,6 +41,8 @@ sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y
 sudo nala install grub-customizer -y
 # Install touchpad drivers
 sudo nala install xserver-xorg-input-synaptics -y
+# Install wacom tablet settings gui
+sudo nala install kde-config-tablet -y
 # Install telegram
 pacstall -I telegram-bin -P
 # Add my custom pacstall repo
