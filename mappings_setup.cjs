@@ -36,6 +36,10 @@ const mappings_obj = {
         "1,97,1": [
             "Alt_R",
             "keyboard"
+        ],
+        "1,61,1": [
+            "Control_L+KEY_F10",
+            "keyboard"
         ]
     }
 }
