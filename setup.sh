@@ -48,31 +48,25 @@ sudo nala install kde-config-tablet -y
 # Install telegram
 pacstall -I telegram-bin -P
 # Add my custom pacstall repo
-pacstall -A https://raw.githubusercontent.com/searleser97/pacstall-packages/main
+# pacstall -A https://raw.githubusercontent.com/searleser97/pacstall-packages/main
 # Install chrome
-pacstall -I google-chrome-searleser97 -P
+# pacstall -I google-chrome-searleser97 -P
 # Install nordvpn
 sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
 sudo usermod -aG nordvpn $USER
 
 # Install wine
-sudo dpkg --add-architecture i386
-sudo mkdir -pm755 /etc/apt/keyrings
-sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
-sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
-sudo apt update
-sudo apt install libpoppler-glib8:{i386,amd64}=22.02.0-2ubuntu0.1
-sudo nala install --install-recommends winehq-stable
+# sudo dpkg --add-architecture i386
+# sudo mkdir -pm755 /etc/apt/keyrings
+# sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
+# sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
+# sudo apt update
+# sudo apt install libpoppler-glib8:{i386,amd64}=22.02.0-2ubuntu0.1
+# sudo nala install --install-recommends winehq-stable
 # winecfg
 
 # Install input remapper
 sudo nala install input-remapper -y
-echo "The following command will open input-remapper UI"
-echo "proceed to enter the requested password in the UI and then close the GUI to continue with the execution of this script"
-read -p "[Press ENTER to continue]"
-input-remapper-gtk # after entering root passwd in the UI, must close the program to continue with script execution
-# Apply mappings
-node ./mappings_setup.cjs
 
 cat ./my_zshrc > ~/.zshrc
 # reboot to be able to use the new default shell which is ZSH and for nordvpn to work properly
