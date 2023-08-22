@@ -4,7 +4,7 @@ echo "creating temporary autostart file in $AUTOSTARTDIR"
 sudo mkdir $AUTOSTARTDIR
 sudo cp after_first_restart.desktop $AUTOSTARTDIR
 chmod +x ./after_first_restart.sh
-echo "Exec=xterm -e bash -c 'cd $(pwd) && source ./after_first_restart.sh'" | sudo tee -a $AUTOSTARTDIR/after_first_restart.desktop
+echo "Exec=xterm -e bash -c 'cd $(pwd) && source ./after_first_restart.sh' &" | sudo tee -a $AUTOSTARTDIR/after_first_restart.desktop
 
 # Install FiraCode Nerd Font
 mkdir -p ~/.fonts/f 
