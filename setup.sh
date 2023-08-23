@@ -6,10 +6,6 @@ sudo cp after_first_restart.desktop $AUTOSTARTDIR
 chmod +x ./after_first_restart.sh
 echo "Exec=xterm -e bash -c 'cd $(pwd) && source ./after_first_restart.sh' &" | sudo tee -a $AUTOSTARTDIR/after_first_restart.desktop
 
-# Install FiraCode Nerd Font
-mkdir -p ~/.fonts/f 
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.1/FiraMono.zip -P ~/.fonts/f
-unzip ~/.fonts/f/FiraMono.zip -d ~/.fonts/f/
 # Install pacstall
 sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
 # Install nala
@@ -27,17 +23,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 nvm install node
-# Install VSCode
-sudo snap install code --classic
-# Install neovim nightly
-sudo snap install --edge nvim --classic
-# Install common neovim dependencies
-sudo nala install ripgrep python3-venv xclip -y
-# Install NvChad
-# git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-# Install my NvChad Custom Config
-# rm -R ~/.config/nvim/lua/custom/
-# git clone https://github.com/searleser97/NvChadCustomConfig ~/.config/nvim/lua/custom
+
 # Install grub-customizer
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y
 sudo nala install grub-customizer -y
@@ -45,12 +31,7 @@ sudo nala install grub-customizer -y
 sudo nala install xserver-xorg-input-synaptics -y
 # Install wacom tablet settings gui
 sudo nala install kde-config-tablet -y
-# Install telegram
-pacstall -I telegram-bin -P
-# Add my custom pacstall repo
-# pacstall -A https://raw.githubusercontent.com/searleser97/pacstall-packages/main
-# Install chrome
-# pacstall -I google-chrome-searleser97 -P
+
 # Install nordvpn
 sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
 sudo usermod -aG nordvpn $USER
@@ -68,7 +49,19 @@ sudo usermod -aG nordvpn $USER
 # Install input remapper
 sudo nala install input-remapper -y
 
+# setup keyboard mappings
+echo "After clicking [Enter Key] in this terminal you will be prompted to input your root password to open the 'input-remapper' app"
+echo "proceed to do so and then close the 'input-remapper' app to continue with the execution of this script"
+input-remapper-gtk
+node ./mappings_setup.cjs
+
 cat ./my_zshrc > ~/.zshrc
+
+# Install FiraCode Nerd Font
+mkdir -p ~/.fonts/f 
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.1/FiraMono.zip -P ~/.fonts/f
+unzip ~/.fonts/f/FiraMono.zip -d ~/.fonts/f/
+
 # reboot to be able to use the new default shell which is ZSH and for nordvpn to work properly
 reboot
 
