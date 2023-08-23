@@ -63,6 +63,9 @@ mkdir -p ~/.fonts/f
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.1/FiraMono.zip -P ~/.fonts/f
 unzip ~/.fonts/f/FiraMono.zip -d ~/.fonts/f/
 
+echo "The setup has completed the stage 1!"
+read -P "Click [Enter] to reboot your machine and continue with the final stage of the setup"
+
 # reboot to be able to use the new default shell which is ZSH and for nordvpn to work properly
 reboot
 
