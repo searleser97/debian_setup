@@ -52,7 +52,9 @@ sudo nala install input-remapper -y
 # setup keyboard mappings
 echo "After clicking [Enter Key] in this terminal you will be prompted to input your root password to open the 'input-remapper' app"
 echo "proceed to do so and then close the 'input-remapper' app to continue with the execution of this script"
-read -p "Click [Enter] to continue"
+echo "Click [Enter] to continue"
+read A
+
 input-remapper-gtk
 node ./mappings_setup.cjs
 
@@ -63,8 +65,9 @@ mkdir -p ~/.fonts/f
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.1/FiraMono.zip -P ~/.fonts/f
 unzip ~/.fonts/f/FiraMono.zip -d ~/.fonts/f/
 
-echo "The setup has completed the stage 1!"
-read -p "Click [Enter] to reboot your machine and continue with the final stage of the setup"
+echo "The stage 1 of the setup has completed !"
+echo "Click [Enter] to reboot your machine and continue with the final stage of the setup"
+read A
 
 # reboot to be able to use the new default shell which is ZSH and for nordvpn to work properly
 reboot
