@@ -52,6 +52,7 @@ sudo nala install input-remapper -y
 # setup keyboard mappings
 echo "After clicking [Enter Key] in this terminal you will be prompted to input your root password to open the 'input-remapper' app"
 echo "proceed to do so and then close the 'input-remapper' app to continue with the execution of this script"
+read -P "Click [Enter] to continue"
 input-remapper-gtk
 node ./mappings_setup.cjs
 
