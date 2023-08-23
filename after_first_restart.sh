@@ -27,7 +27,7 @@ pacstall -A https://raw.githubusercontent.com/searleser97/pacstall-packages/main
 pacstall -I google-chrome-searleser97 -P
 
 # Install oh-my-zsh
-xterm -hold -e bash -c 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc' & disown
+xterm -hold -e bash -c 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc' &
 
 # Remove autostart script
 sudo rm $AUTOSTARTDIR/after_first_restart.*
