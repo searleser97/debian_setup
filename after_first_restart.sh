@@ -17,9 +17,9 @@ sudo nala install ripgrep python3-venv xclip -y
 # Install telegram
 pacstall -I telegram-bin -P
 # Add my custom pacstall repo
-# pacstall -A https://raw.githubusercontent.com/searleser97/pacstall-packages/main
+pacstall -A https://raw.githubusercontent.com/searleser97/pacstall-packages/main
 # Install chrome
-# pacstall -I google-chrome-searleser97 -P
+pacstall -I google-chrome-searleser97 -P
 
 # Install oh-my-zsh
 xterm -e bash -c 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc' & disown
