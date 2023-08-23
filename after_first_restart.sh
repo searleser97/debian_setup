@@ -31,7 +31,7 @@ pacstall -I google-chrome-searleser97 -P
 echo "After clicking [Enter] this script will proceed to install 'oh-my-zsh' which will"
 echo "open up a sub-environment in this terminal, once it does, please type 'exit' and click [Enter]"
 echo "so that we return to the main thread and the execution of this script can continue"
-read -p "click [Enter] to continue
+read -p "click [Enter] to continue"
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
 read -p "The setup has completed press [Enter] to quit"
