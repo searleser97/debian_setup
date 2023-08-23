@@ -6,7 +6,8 @@ AUTOSTARTDIR="/etc/xdg/autostart"
 echo "After clicking [Enter Key] the 'input-remapper' app will be executed"
 echo "You will see that 'my_mappings' config will be preselected just click on the 'apply' button"
 echo "to ensure the mappings are applied to your system"
-read -p "Click [Enter] to continue"
+echo "Click [Enter] to continue"
+read A
 input-remapper-gtk
 
 # Install VSCode
