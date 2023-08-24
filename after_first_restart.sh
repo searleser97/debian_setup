@@ -28,6 +28,9 @@ pacstall -A https://raw.githubusercontent.com/searleser97/pacstall-packages/main
 # Install chrome
 pacstall -I google-chrome-searleser97 -P
 
+# save git credentials in computer
+git config --global credential.helper store
+
 # Install oh-my-zsh
 echo "After clicking [Enter] this script will proceed to install 'oh-my-zsh' which will"
 echo "open up a sub-environment in this terminal, once it does, please type 'exit' and click [Enter]"
