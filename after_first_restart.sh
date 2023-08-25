@@ -15,7 +15,7 @@ sudo snap install code --classic
 # Install neovim nightly
 sudo snap install --edge nvim --classic
 # Install common neovim dependencies
-sudo nala install ripgrep python3-venv xclip -y
+sudo nala install ripgrep python3-venv xclip fd-find -y
 # Install NvChad
 # git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 # Install my NvChad Custom Config
