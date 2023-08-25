@@ -4,14 +4,6 @@ if grep -qi microsoft /proc/version; then
   ISWSL="yes"
 fi
 
-# setup first restart script
-AUTOSTARTDIR="/etc/xdg/autostart"
-echo "creating temporary autostart file in $AUTOSTARTDIR"
-sudo mkdir $AUTOSTARTDIR
-sudo cp after_first_restart.desktop $AUTOSTARTDIR
-chmod +x ./after_first_restart.sh
-echo "Exec=xterm -e bash -c 'cd $(pwd) && source ./after_first_restart.sh' &" | sudo tee -a $AUTOSTARTDIR/after_first_restart.desktop
-
 # Install pacstall
 sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
 # Install nala
@@ -30,8 +22,10 @@ export NVM_DIR="$HOME/.nvm"
 
 nvm install node
 
-# Install grub-customizer
 if [ "$ISWSL" = "no" ]; then
+
+
+# Install grub-customizer
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y
 sudo nala install grub-customizer -y
 # Install touchpad drivers
@@ -57,6 +51,14 @@ node ./mappings_setup.cjs
 mkdir -p ~/.fonts/f 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.1/FiraMono.zip -P ~/.fonts/f
 unzip ~/.fonts/f/FiraMono.zip -d ~/.fonts/f/
+
+# setup first restart script
+AUTOSTARTDIR="/etc/xdg/autostart"
+echo "creating temporary autostart file in $AUTOSTARTDIR"
+sudo mkdir $AUTOSTARTDIR
+sudo cp after_first_restart.desktop $AUTOSTARTDIR
+chmod +x ./after_first_restart.sh
+echo "Exec=xterm -e bash -c 'cd $(pwd) && source ./after_first_restart.sh' &" | sudo tee -a $AUTOSTARTDIR/after_first_restart.desktop
 
 echo "The stage 1 of the setup has completed !"
 echo "Click [Enter] to reboot your machine and continue with the final stage of the setup"
