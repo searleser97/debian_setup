@@ -23,11 +23,8 @@ sudo snap install code --classic
 sudo snap install --edge nvim --classic
 # Install common neovim dependencies
 sudo nala install ripgrep python3-venv xclip fd-find -y
-# Install NvChad
-# git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
-# Install my NvChad Custom Config
-# rm -R ~/.config/nvim/lua/custom/
-# git clone https://github.com/searleser97/NvChadCustomConfig ~/.config/nvim/lua/custom
+# Install my neovim config
+git clone https://github.com/searleser97/nvim_lua ~/.config/nvim
 # Install telegram
 pacstall -I telegram-bin -P
 # Add my custom pacstall repo
