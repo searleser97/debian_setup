@@ -1,5 +1,11 @@
 #!/bin/zsh
+ISWSL="no"
 
+if grep -qi microsoft /proc/version; then
+  ISWSL="yes"
+fi
+
+if [ "$ISWSL" = "no" ]; then
 AUTOSTARTDIR="/etc/xdg/autostart"
 
 # Ensure key mappings are applied
@@ -9,6 +15,7 @@ echo "to ensure the mappings are applied to your system"
 echo "Click [Enter] to continue"
 read A
 input-remapper-gtk
+fi
 
 # Install VSCode
 sudo snap install code --classic
@@ -42,5 +49,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 echo "The setup has completed press [Enter] to quit"
 read A
 
+if [ "$ISWSL" = "no" ]; then
 # Remove autostart script
 sudo rm $AUTOSTARTDIR/after_first_restart.*
+fi
