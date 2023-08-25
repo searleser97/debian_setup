@@ -1,3 +1,9 @@
+ISWSL="no"
+
+if grep -qi microsoft /proc/version; then
+  ISWSL="yes"
+fi
+
 # setup first restart script
 AUTOSTARTDIR="/etc/xdg/autostart"
 echo "creating temporary autostart file in $AUTOSTARTDIR"
@@ -25,27 +31,16 @@ export NVM_DIR="$HOME/.nvm"
 nvm install node
 
 # Install grub-customizer
+if [ "$ISWSL" = "no" ]; then
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y
 sudo nala install grub-customizer -y
 # Install touchpad drivers
 sudo nala install xserver-xorg-input-synaptics -y
 # Install wacom tablet settings gui
 sudo nala install kde-config-tablet -y
-
 # Install nordvpn
 sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
 sudo usermod -aG nordvpn $USER
-
-# Install wine
-# sudo dpkg --add-architecture i386
-# sudo mkdir -pm755 /etc/apt/keyrings
-# sudo wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
-# sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources
-# sudo apt update
-# sudo apt install libpoppler-glib8:{i386,amd64}=22.02.0-2ubuntu0.1
-# sudo nala install --install-recommends winehq-stable
-# winecfg
-
 # Install input remapper
 sudo nala install input-remapper -y
 
@@ -58,8 +53,6 @@ read A
 input-remapper-gtk
 node ./mappings_setup.cjs
 
-cat ./my_zshrc > ~/.zshrc
-
 # Install FiraCode Nerd Font
 mkdir -p ~/.fonts/f 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.1/FiraMono.zip -P ~/.fonts/f
@@ -71,4 +64,6 @@ read A
 
 # reboot to be able to use the new default shell which is ZSH and for nordvpn to work properly
 reboot
+fi
 
+cat ./my_zshrc > ~/.zshrc
