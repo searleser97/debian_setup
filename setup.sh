@@ -23,8 +23,6 @@ export NVM_DIR="$HOME/.nvm"
 nvm install node
 
 if [ "$ISWSL" = "no" ]; then
-
-
 # Install grub-customizer
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y
 sudo nala install grub-customizer -y
