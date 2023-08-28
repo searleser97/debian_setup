@@ -35,6 +35,12 @@ pacstall -I google-chrome-searleser97 -P
 # save git credentials in computer
 git config --global credential.helper store
 
+# Add desktop entry for VSCode
+cp /snap/code/current/meta/gui/code.desktop ~/.local/share/applications/
+cp /snap/code/current/meta/gui/code-url-handler.desktop ~/.local/share/applications/
+sed 's/${SNAP}/\/snap\/code\/current/g' ~/.local/share/applications/code.desktop
+sed 's/${SNAP}/\/snap\/code\/current/g' ~/.local/share/applications/code-url-handler.desktop
+
 # Install oh-my-zsh
 echo "After clicking [Enter] this script will proceed to install 'oh-my-zsh' which will"
 echo "open up a sub-environment in this terminal, once it does, please type 'exit' and click [Enter]"
