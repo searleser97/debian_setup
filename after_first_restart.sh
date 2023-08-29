@@ -1,4 +1,3 @@
-#!/bin/zsh
 ISWSL="no"
 
 if grep -qi microsoft /proc/version; then
@@ -40,6 +39,20 @@ cp /snap/code/current/meta/gui/code.desktop ~/.local/share/applications/
 cp /snap/code/current/meta/gui/code-url-handler.desktop ~/.local/share/applications/
 sed 's/${SNAP}/\/snap\/code\/current/g' ~/.local/share/applications/code.desktop
 sed 's/${SNAP}/\/snap\/code\/current/g' ~/.local/share/applications/code-url-handler.desktop
+
+# Install flutter
+sudo nala install opendjdk-17-jdk -y
+sudo snap install flutter --classic
+mkdir ~/Android
+# the url to get the latest version of command line tools can be found in https://developer.android.com/studio#command-tools
+wget https://dl.google.com/android/repository/commandlinetools-linux-10406996_latest.zip -P ~/Android
+unzip ~/Android/commandlinetools-linux-10406996_latest.zip -d ~/Android/
+mkdir ~/Android/latest/
+mv ~/Android/cmdline-tools/* ~/Android/latest
+mv ~/Android/latest ~/Android cmdline-tools
+sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.2" "system-images;android-33;google_apis;x86_64" --sdk_root="$HOME/Android"
+flutter doctor
+
 
 # Install oh-my-zsh
 echo "After clicking [Enter] this script will proceed to install 'oh-my-zsh' which will"
