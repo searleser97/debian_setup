@@ -22,6 +22,8 @@ export NVM_DIR="$HOME/.nvm"
 
 nvm install node
 
+cat ./my_zshrc > ~/.zshrc
+
 if [ "$ISWSL" = "no" ]; then
 # Install grub-customizer
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y
@@ -66,4 +68,4 @@ read A
 reboot
 fi
 
-cat ./my_zshrc > ~/.zshrc
+
