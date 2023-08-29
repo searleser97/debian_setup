@@ -41,7 +41,7 @@ sed 's/${SNAP}/\/snap\/code\/current/g' ~/.local/share/applications/code.desktop
 sed 's/${SNAP}/\/snap\/code\/current/g' ~/.local/share/applications/code-url-handler.desktop
 
 # Install flutter
-sudo nala install opendjdk-17-jdk -y
+sudo nala install openjdk-17-jdk -y
 sudo snap install flutter --classic
 mkdir ~/Android
 # the url to get the latest version of command line tools can be found in https://developer.android.com/studio#command-tools
