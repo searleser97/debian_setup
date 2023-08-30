@@ -16,14 +16,20 @@ read A
 input-remapper-gtk
 fi
 
-# Install VSCode
-sudo snap install code --classic
-# Install neovim nightly
-sudo snap install --edge nvim --classic
 # Install common neovim dependencies
 sudo nala install ripgrep python3-venv xclip fd-find -y
+# Install neovim nightly
+sudo snap install --edge nvim --classic
 # Install my neovim config
 git clone https://github.com/searleser97/nvim_lua ~/.config/nvim
+# Install VSCode
+sudo snap install code --classic
+# Add desktop entry for VSCode
+mkdir ~/.local/share/applications
+cp /snap/code/current/meta/gui/code.desktop ~/.local/share/applications/
+cp /snap/code/current/meta/gui/code-url-handler.desktop ~/.local/share/applications/
+sed -i 's/${SNAP}/\/snap\/code\/current/g' ~/.local/share/applications/code.desktop
+sed -i 's/${SNAP}/\/snap\/code\/current/g' ~/.local/share/applications/code-url-handler.desktop
 # Install telegram
 pacstall -I telegram-bin -P
 # Add my custom pacstall repo
@@ -33,13 +39,6 @@ pacstall -I google-chrome-searleser97 -P
 
 # save git credentials in computer
 git config --global credential.helper store
-
-# Add desktop entry for VSCode
-mkdir ~/.local/share/applications
-cp /snap/code/current/meta/gui/code.desktop ~/.local/share/applications/
-cp /snap/code/current/meta/gui/code-url-handler.desktop ~/.local/share/applications/
-sed -i 's/${SNAP}/\/snap\/code\/current/g' ~/.local/share/applications/code.desktop
-sed -i 's/${SNAP}/\/snap\/code\/current/g' ~/.local/share/applications/code-url-handler.desktop
 
 # Install flutter
 sudo nala install openjdk-17-jdk -y
@@ -55,7 +54,6 @@ mv ~/Android/latest ~/Android/cmdline-tools
 export PATH=$HOME/Android/platform-tools:$PATH
 flutter doctor --android-licenses
 flutter doctor
-
 
 # Install oh-my-zsh
 echo "After clicking [Enter] this script will proceed to install 'oh-my-zsh' which will"
