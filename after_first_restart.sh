@@ -50,7 +50,7 @@ unzip ~/Android/commandlinetools-linux-10406996_latest.zip -d ~/Android/
 mkdir ~/Android/latest/
 mv ~/Android/cmdline-tools/* ~/Android/latest
 mv ~/Android/latest ~/Android/cmdline-tools
-sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.2" "system-images;android-33;google_apis;x86_64" --sdk_root="$HOME/Android"
+~/Android/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.2" "system-images;android-33;google_apis;x86_64" --sdk_root="$HOME/Android"
 flutter doctor
 
 
