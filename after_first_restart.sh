@@ -37,8 +37,8 @@ git config --global credential.helper store
 # Add desktop entry for VSCode
 cp /snap/code/current/meta/gui/code.desktop ~/.local/share/applications/
 cp /snap/code/current/meta/gui/code-url-handler.desktop ~/.local/share/applications/
-sed 's/${SNAP}/\/snap\/code\/current/g' ~/.local/share/applications/code.desktop
-sed 's/${SNAP}/\/snap\/code\/current/g' ~/.local/share/applications/code-url-handler.desktop
+sed -i 's/${SNAP}/\/snap\/code\/current/g' ~/.local/share/applications/code.desktop
+sed -i 's/${SNAP}/\/snap\/code\/current/g' ~/.local/share/applications/code-url-handler.desktop
 
 # Install flutter
 sudo nala install openjdk-17-jdk -y
