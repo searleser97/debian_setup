@@ -52,6 +52,7 @@ mv ~/Android/cmdline-tools/* ~/Android/latest
 mv ~/Android/latest ~/Android/cmdline-tools
 ~/Android/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.2" "system-images;android-33;google_apis;x86_64" --sdk_root="$HOME/Android"
 export PATH=$HOME/Android/platform-tools:$PATH
+flutter doctor
 flutter doctor --android-licenses
 flutter doctor
 
