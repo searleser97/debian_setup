@@ -19,7 +19,9 @@ fi
 # Install common neovim dependencies
 sudo nala install ripgrep python3-venv xclip fd-find -y
 # Install neovim nightly
-sudo snap install --edge nvim --classic
+mkdir ~/ProgramFiles
+wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz -P ~/ProgramFiles
+tar -xvzf ~/ProgramFiles/nvim-linux64.tar.gz -C ~/ProgramFiles/
 # Install my neovim config
 git clone https://github.com/searleser97/nvim_lua ~/.config/nvim
 # Install VSCode
