@@ -41,6 +41,8 @@ pacstall -I google-chrome-searleser97 -P
 
 # save git credentials in computer
 git config --global credential.helper store
+# set nvim as default git editor
+git config --global core.editor "nvim"
 
 # Install flutter
 sudo nala install openjdk-17-jdk -y
