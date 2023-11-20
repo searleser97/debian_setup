@@ -43,6 +43,8 @@ pacstall -I google-chrome-searleser97 -P
 git config --global credential.helper store
 # set nvim as default git editor
 git config --global core.editor "nvim"
+# auto create branches on remote locally
+git config --global push.autoSetupRemote true
 
 # Install flutter
 sudo nala install openjdk-17-jdk -y
