@@ -35,17 +35,6 @@ sudo nala install kde-config-tablet -y
 # Install nordvpn
 sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
 sudo usermod -aG nordvpn $USER
-# Install input remapper
-sudo nala install input-remapper -y
-
-# setup keyboard mappings
-echo "After clicking [Enter Key] in this terminal you will be prompted to input your root password to open the 'input-remapper' app"
-echo "proceed to do so and then close the 'input-remapper' app to continue with the execution of this script"
-echo "Click [Enter] to continue"
-read A
-
-input-remapper-gtk
-node ./mappings_setup.cjs
 
 # Install FiraCode Nerd Font
 mkdir -p ~/.fonts/f 
