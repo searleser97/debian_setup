@@ -8,12 +8,14 @@ fi
 sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
 # Install nala
 pacstall -I nala-deb -P
-# Install xterm
-sudo nala install xterm -y
+curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
+echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
+sudo apt-get update
+sudo apt-get install wezterm
 # Install ZSHell
 sudo nala install zsh -y
 chsh -s $(which zsh)
-# Install nodejs
+# Install nodejs using nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash # installs NVM (Node Version Manager)
 
 export NVM_DIR="$HOME/.nvm"
