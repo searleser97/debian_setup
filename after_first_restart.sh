@@ -30,7 +30,7 @@ pacstall -I telegram-bin -P
 curl -fSsL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor | sudo tee /usr/share/keyrings/microsoft-edge.gpg > /dev/null
 echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft-edge.gpg] https://packages.microsoft.com/repos/edge stable main' | sudo tee /etc/apt/sources.list.d/microsoft-edge.list
 sudo nala update
-sudo nala install microsoft-edge-stable
+sudo nala install microsoft-edge-stable -y
 
 # save git credentials in computer
 git config --global credential.helper store
