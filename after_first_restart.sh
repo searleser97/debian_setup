@@ -6,14 +6,6 @@ fi
 
 if [ "$ISWSL" = "no" ]; then
 AUTOSTARTDIR="/etc/xdg/autostart"
-
-# Ensure key mappings are applied
-echo "After clicking [Enter Key] the 'input-remapper' app will be executed"
-echo "You will see that 'my_mappings' config will be preselected just click on the 'apply' button"
-echo "to ensure the mappings are applied to your system"
-echo "Click [Enter] to continue"
-read A
-input-remapper-gtk
 fi
 
 # Install common neovim dependencies
