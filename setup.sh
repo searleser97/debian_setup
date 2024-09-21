@@ -38,10 +38,10 @@ sudo nala install kde-config-tablet -y
 sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
 sudo usermod -aG nordvpn $USER
 
-# Install FiraCode Nerd Font
-mkdir -p ~/.fonts/f 
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.1/FiraMono.zip -P ~/.fonts/f
-unzip ~/.fonts/f/FiraMono.zip -d ~/.fonts/f/
+# Install FiraCode Nerd Font (not neede anymore since wezterm supports nerdfont chars already
+# mkdir -p ~/.fonts/f 
+# wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.1/FiraMono.zip -P ~/.fonts/f
+# unzip ~/.fonts/f/FiraMono.zip -d ~/.fonts/f/
 
 # setup first restart script
 AUTOSTARTDIR="/etc/xdg/autostart"
