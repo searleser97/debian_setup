@@ -7,7 +7,7 @@ fi
 if [ "$ISWSL" = "no" ]; then
 # Remove autostart script
 AUTOSTARTDIR="$HOME/.config/autostart"
-sudo rm $AUTOSTARTDIR/after_first_restart.*
+rm $AUTOSTARTDIR/after_first_restart.*
 echo "Setup has completed! Enjoy!"
 echo "[Press Enter to Exit]"
 read A

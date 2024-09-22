@@ -37,10 +37,10 @@ sudo mkdir $AUTOSTARTDIR
 DESKTOPFILE="$AUTOSTARTDIR/after_first_restart.desktop"
 touch $DESKTOPFILE
 
-echo "[Desktop Entry]" | tee -a $DESKTOPFILE
+echo "[Desktop Entry]" > $DESKTOPFILE
 echo "Type=Application" | tee -a $DESKTOPFILE
 echo "Name=After First Restart Script" | tee -a $DESKTOPFILE
-echo "Exec=/usr/bin/wezterm start --cwd $(pwd) /usr/bin/zsh -c \"source ./after_first_restart.sh; zsh -i'\"" | tee -a $DESKTOPFILE
+echo "Exec=/usr/bin/wezterm start --cwd $(pwd) /usr/bin/zsh -c \"source ./after_first_restart.sh; zsh -i\"" | tee -a $DESKTOPFILE
 chmod +x $DESKTOPFILE
 echo "The stage 1 of the setup has completed !"
 echo "Click [Enter] to reboot your machine and continue with the final stage of the setup"
