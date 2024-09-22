@@ -25,7 +25,7 @@ sudo nala install wezterm -y
 # Install my neovim config
 git clone https://github.com/searleser97/nvim_lua ~/.config/nvim
 # Install my wezterm settings
-cp ~/.config/nvim/.wezterm.config ~/.wezterm.config
+cp ~/.config/nvim/.wezterm.lua ~/.wezterm.lua
 # Install my gitconfig settings
 cp ~/.config/nvim/.gitconfig ~/.gitconfig
 wezterm start --always-new-process --cwd $(pwd) zsh -c "source setup1.sh"
