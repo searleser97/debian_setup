@@ -15,3 +15,6 @@ export NVM_DIR="$HOME/.nvm"
 export ANDROID=$HOME/Android
 export PATH=$ANDROID/cmdline-tools/latest/bin:$PATH
 export PATH=$ANDROID/platform-tools:$PATH
+
+# Add .NET Core SDK tools
+export PATH="$PATH:$HOME/.dotnet/tools"
