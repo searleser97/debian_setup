@@ -3,7 +3,6 @@ ISWSL="no"
 if grep -qi microsoft /proc/version; then
   ISWSL="yes"
 fi
-sudo echo "starting"
 
 # Install my zshrc config
 cat ./.zshrc > ~/.zshrc
