@@ -5,7 +5,5 @@ export PATH=$ANDROID/platform-tools:$PATH
 
 # Add .NET Core SDK tools
 export PATH=$HOME/.dotnet/tools:$PATH
-# Add homebrew to PATH
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-# Set git credential manager store env var
+# Set git credential manager store mode
 export GCM_CREDENTIAL_STORE=cache

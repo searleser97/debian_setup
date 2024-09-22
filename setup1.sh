@@ -4,8 +4,6 @@ if grep -qi microsoft /proc/version; then
   ISWSL="yes"
 fi
 
-# Install homebrew to be able to install neovim nightly properly
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # Install dotnet tools to be able to install git credential manager after reboot
 sudo nala install dotnet-sdk-7.0
 # Install node version manager to be able to install nodejs after reboot
