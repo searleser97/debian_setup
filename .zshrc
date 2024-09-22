@@ -17,4 +17,4 @@ export PATH=$ANDROID/cmdline-tools/latest/bin:$PATH
 export PATH=$ANDROID/platform-tools:$PATH
 
 # Add .NET Core SDK tools
-export PATH=$PATH:$HOME/.dotnet/tools
+export PATH=$HOME/.dotnet/tools:$PATH
