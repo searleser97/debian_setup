@@ -38,6 +38,8 @@ sudo nala install kde-config-tablet -y
 # Install nordvpn
 sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
 sudo usermod -aG nordvpn $USER
+# Install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # Install FiraCode Nerd Font (not neede anymore since wezterm supports nerdfont chars already
 # mkdir -p ~/.fonts/f 
