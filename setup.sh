@@ -3,6 +3,7 @@ ISWSL="no"
 if grep -qi microsoft /proc/version; then
   ISWSL="yes"
 fi
+sudo echo "starting"
 
 # Install my zshrc config
 cat ./.zshrc > ~/.zshrc
@@ -14,6 +15,8 @@ cp ~/.config/nvim/.wezterm.config ~/.wezterm.config
 cp ~/.config/nvim/.gitconfig ~/.gitconfig
 # Install pacstall
 sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
+# Install homebrew to be able to install neovim nightly properly
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # Install nala
 pacstall -I nala-deb -P
 # Install Wezterm
@@ -52,7 +55,7 @@ echo "creating temporary autostart file in $AUTOSTARTDIR"
 sudo mkdir $AUTOSTARTDIR
 sudo cp after_first_restart.desktop $AUTOSTARTDIR
 chmod +x ./after_first_restart.sh
-echo "Exec=wezterm start zsh -c \"cd $(pwd) && source ./after_first_restart.sh; zsh -i'\" | sudo tee -a $AUTOSTARTDIR/after_first_restart.desktop
+echo "Exec=wezterm start zsh -c \"cd $(pwd) && source ./after_first_restart.sh; zsh -i'\"" | sudo tee -a $AUTOSTARTDIR/after_first_restart.desktop
 
 echo "The stage 1 of the setup has completed !"
 echo "Click [Enter] to reboot your machine and continue with the final stage of the setup"
