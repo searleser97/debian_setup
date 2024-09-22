@@ -14,8 +14,8 @@ export NVM_DIR="$HOME/.nvm"
 nvm install node
 sudo nala install ripgrep python3-venv xclip fd-find -y
 # Install neovim nightly
-sudo add-apt-repository ppa:neovim-ppa/unstable
-sudo nala install neovim
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
+sudo nala install neovim -y
 if [ "$ISWSL" = "no" ]; then
 # Install VSCode
 sudo snap install code --classic
