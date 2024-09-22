@@ -15,6 +15,9 @@ source setup.sh
 2. set Wezterm as default terminal (in kde this will make the "open terminal here" option in file browser to use wezterm)
 3. set Neovim as the default text editor (neovim desktop file gets intalled automatically from the setup.sh)
 
+![image](https://github.com/user-attachments/assets/29313ab9-3f03-429b-b384-1ff269e1a777)
+
+
 ### Connect bluetooth devices
 
 1. Make sure that your PC's bluetooth is visible to others
