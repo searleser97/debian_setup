@@ -60,3 +60,6 @@ unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
 chmod +x /tmp/win32yank.exe
 sudo mv /tmp/win32yank.exe /usr/local/bin/win32yank.exe
 fi
+
+echo "Click [Enter] to continue with the last step"
+read A
