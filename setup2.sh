@@ -35,6 +35,9 @@ sudo nala update
 sudo nala install microsoft-edge-stable -y
 # Install telegram
 flatpak install app/org.telegram.desktop/x86_64/stable -y
+# Install RClone to manage cloud storage services like onedrive or google drive
+sudo nala install rclone
+rclone config
 # Install DisplayLink Driver to be able to use DisplayLink docks
 wget -P "$HOME/Downloads" "https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb"
 sudo nala install $HOME/Downloads/synaptics-repository-keyring.deb -y
