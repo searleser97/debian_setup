@@ -47,8 +47,6 @@ mkdir -p $SYSTEMD_DIR
 cp ./onedrive.service $SYSTEMD_DIR
 sed -i "s|\${HOME}|$HOME|g" $SYSTEMD_DIR/onedrive.service
 systemctl --user daemon-reload
-systemctl --user start onedrive
-systemctl --user status onedrive
 systemctl --user enable onedrive
 # Install DisplayLink Driver to be able to use DisplayLink docks
 wget -P "$HOME/Downloads" "https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb"
