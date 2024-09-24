@@ -1,7 +1,10 @@
 [Unit]
 Description=OneDrive Service powered by rclone
 After=xdg-desktop-autostart.target
+
 [Service]
 Type=exec
 ExecStart=/usr/bin/rclone --vfs-cache-mode writes mount "OneDrive": ${HOME}/OneDrive
 
+[Install]
+WantedBy=xdg-desktop-autostart.target
