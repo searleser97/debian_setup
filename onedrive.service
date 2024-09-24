@@ -5,5 +5,5 @@ After=multi-user.target
 Type=exec
 ExecStart=/usr/bin/rclone --vfs-cache-mode writes mount "OneDrive": ${HOME}/OneDrive
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
 

@@ -3,7 +3,6 @@ ISWSL="no"
 if grep -qi microsoft /proc/version; then
   ISWSL="yes"
 fi
-
 # Install dotnet tools to be able to install git credential manager after reboot
 sudo nala install dotnet-sdk-7.0
 # Install node version manager to be able to install nodejs after reboot
