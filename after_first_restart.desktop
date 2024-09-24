@@ -1,3 +1,4 @@
 [Desktop Entry]
 Type=Application
 Name=After First Restart Script
+Exec=/usr/bin/wezterm start --cwd ${cwd} /usr/bin/zsh -c "source ./after_first_restart.sh"

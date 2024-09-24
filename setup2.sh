@@ -38,6 +38,15 @@ flatpak install app/org.telegram.desktop/x86_64/stable -y
 # Install RClone to manage cloud storage services like onedrive or google drive
 sudo nala install rclone
 rclone config
+# Install RClone service so that onedrive runs on startup as service
+$SYSTEMD_DIR=$HOME/.config/systemd/user
+mkdir -p $SYSTEMD_DIR
+cp ./onedrive.service $SYSTEMD_DIR
+sed -i "s|\${HOME}|$HOME|g" $SYSTEMD_DIR/onedrive.service
+systemctl --user daemon-reload
+systemctl --user start onedrive
+systemctl --user status onedrive
+systemctl --user enable onedrive
 # Install DisplayLink Driver to be able to use DisplayLink docks
 wget -P "$HOME/Downloads" "https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb"
 sudo nala install $HOME/Downloads/synaptics-repository-keyring.deb -y
