@@ -22,6 +22,7 @@ sudo nala install neovim -y
 if [ "$ISWSL" = "no" ]; then
 # Install VSCode
 sudo snap install code --classic
+code .
 # Add desktop entry for VSCode
 mkdir ~/.local/share/applications
 cp /snap/code/current/meta/gui/code.desktop ~/.local/share/applications/
