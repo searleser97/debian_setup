@@ -24,6 +24,8 @@ sudo nala update
 sudo nala install wezterm -y
 # Install my neovim config
 git clone https://github.com/searleser97/nvim_lua ~/.config/nvim
+# Used for neovim lua lsp, specifically for `vim.loop.<function>` autocompletitions
+git clone https://github.com/Bilal2453/luvit-meta ~/.config/luvit-meta
 # Install my wezterm settings
 cp ~/.config/nvim/.wezterm.lua ~/.wezterm.lua
 # Install my gitconfig settings
