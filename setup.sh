@@ -13,10 +13,12 @@ sudo nala install zsh -y
 chsh -s $(which zsh)
 # Install Oh-My-ZSH
 export RUNZSH="no"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" 
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
 # Install my zshrc config
-sed -i 's/ZSH_THEME=.*$/ZSH_THEME="jonathan"/' ~/.zshrc
-cat ./.zshrc >> ~/.zshrc
+cat ./.zshrc > ~/.zshrc
+# Install zsh-nvm to load nvm lazily (more details in the .zshrc file)
+mkdir -p ~/.oh-my-zsh/custom/plugins/
+git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 # Install Wezterm
 curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
 echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
