@@ -15,7 +15,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 nvm install node
-sudo nala install ripgrep python3-venv xclip fd-find -y
+sudo nala install ripgrep python3-venv wl-clipboard fd-find -y
 # Install neovim nightly
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo nala install neovim -y
