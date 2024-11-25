@@ -40,7 +40,8 @@ sudo nala install microsoft-edge-stable -y
 # Install telegram
 flatpak install app/org.telegram.desktop/x86_64/stable -y
 # Install RClone to manage cloud storage services like onedrive or google drive
-sudo nala install rclone
+# sudo nala install rclone
+sudo -v ; curl https://rclone.org/install.sh | sudo bash
 rclone config
 # Install RClone service so that onedrive runs on startup as service
 SYSTEMD_DIR=$HOME/.config/systemd/user
