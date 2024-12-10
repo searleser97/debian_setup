@@ -1,5 +1,6 @@
 [credential]
 	helper = /home/s/.dotnet/tools/git-credential-manager
+	credentialStore = cache
 [credential "https://dev.azure.com"]
 	useHttpPath = true
 [core]
