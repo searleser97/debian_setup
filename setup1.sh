@@ -16,7 +16,7 @@ if [ "$ISWSL" = "no" ]; then
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y
 sudo nala install grub-customizer -y
 # Install wacom tablet settings gui
-sudo nala install kde-config-tablet -y
+# sudo nala install kde-config-tablet -y
 # Install nordvpn
 sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
 sudo usermod -aG nordvpn $USER
