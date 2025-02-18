@@ -5,7 +5,7 @@ if grep -qi microsoft /proc/version; then
 fi
 # Install dotnet tools to be able to install git credential manager after reboot
 sudo add-apt-repository ppa:dotnet/backports
-sudo nala install dotnet-sdk-7.0
+sudo nala install dotnet-sdk-8.0
 # Install node version manager to be able to install nodejs after reboot
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 # Install rust
