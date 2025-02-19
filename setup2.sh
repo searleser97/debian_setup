@@ -4,7 +4,8 @@ if grep -qi microsoft /proc/version; then
   ISWSL="yes"
 fi
 
-
+# Install exfat capabilities
+sudo nala install exfatprogs
 # Install git-delta
 cargo install git-delta
 # Install git credential manager
@@ -46,6 +47,7 @@ rclone config
 # Install RClone service so that onedrive runs on startup as service
 SYSTEMD_DIR=$HOME/.config/systemd/user
 mkdir -p $SYSTEMD_DIR
+mkdir -p $HOME/OneDrive
 cp ./onedrive.service $SYSTEMD_DIR
 sed -i "s|\${HOME}|$HOME|g" $SYSTEMD_DIR/onedrive.service
 systemctl --user daemon-reload
