@@ -81,6 +81,11 @@ curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/down
 unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
 chmod +x /tmp/win32yank.exe
 sudo mv /tmp/win32yank.exe /usr/local/bin/win32yank.exe
+
+# to be able to restore (install dependencies) dotnet solutions (projects)
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+wget -qO- https://aka.ms/install-artifacts-credprovider.sh | bash
+az login
 fi
 
 echo "Click [Enter] to continue with the last step"
