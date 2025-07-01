@@ -4,8 +4,9 @@ if grep -qi microsoft /proc/version; then
   ISWSL="yes"
 fi
 # Install dotnet tools to be able to install git credential manager after reboot
-sudo add-apt-repository ppa:dotnet/backports
-sudo nala install dotnet-sdk-8.0
+wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
+chmod +x ./dotnet-install.sh
+./dotnet-install.sh --version 8.0
 # Install node version manager to be able to install nodejs after reboot
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 # Install rust
