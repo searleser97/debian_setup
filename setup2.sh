@@ -20,6 +20,9 @@ sudo nala install ripgrep python3-venv wl-clipboard fd-find -y
 # Install neovim nightly
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo nala install neovim -y
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
 if [ "$ISWSL" = "no" ]; then
 # Install VSCode
 sudo snap install code --classic
