@@ -16,6 +16,9 @@ export PATH=$ANDROID/platform-tools:$PATH
 
 # Add .NET Core SDK tools
 export PATH=$HOME/.dotnet/tools:$PATH
+export PATH=$HOME/.dotnet:$PATH
+export PATH=$HOME/ProgramFiles/netcoredbg:$PATH
+
 # Set git credential manager store mode
 # export GCM_CREDENTIAL_STORE=cache
 
