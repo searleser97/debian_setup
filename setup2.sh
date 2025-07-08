@@ -23,6 +23,7 @@ sudo nala install neovim -y
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
+# Roslyn lsp server for .NET C# requires more watch instances than the default in linux
 echo "fs.inotify.max_user_instances=8192" | sudo tee -a /etc/sysctl.conf 
 echo "fs.inotify.max_user_watches=1048576" | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
