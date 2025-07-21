@@ -18,6 +18,7 @@ export NVM_DIR="$HOME/.nvm"
 nvm install node
 sudo nala install ripgrep python3-venv wl-clipboard fd-find -y
 # Install neovim nightly
+sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo nala install neovim -y
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
