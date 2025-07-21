@@ -11,6 +11,7 @@ pacstall -I nala-deb -P
 sudo nala install zsh -y
 # set ZShell as default terminal
 chsh -s $(which zsh)
+sudo chsh "$(id -un)" --shell "/usr/bin/zsh"
 # Install Oh-My-ZSH
 export RUNZSH="no"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
