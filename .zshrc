@@ -26,11 +26,16 @@ export DOTNET_ROOT=$HOME/.dotnet
 export FZF_DEFAULT_OPTS="--bind ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down"
 
 sd() {
-  export FZF_DEFAULT_COMMAND='fd --type d -i -H -d 13'
-  dir=$(fzf --preview "tree -C {} -L 2")
-  if [ -n "$dir" ]; then
-    cd "$dir"
-  fi
+  local depth=${1:-13}
+  export FZF_DEFAULT_COMMAND="(echo '..' && fd --type d -i -H -d $depth)"
+  while true; do
+    local dir=$(fzf --preview "tree -C {} -L 1")
+    if [ -n "$dir" ]; then
+      builtin cd "$dir"
+    else
+      return
+    fi
+  done
 }
 
 sf() {
@@ -38,7 +43,7 @@ sf() {
   file=$(fzf)
   if [ -n "$file" ]; then
     dir=$(dirname "$file")
-    cd "$dir"
+    builtin cd "$dir"
   fi
 }
 
@@ -46,11 +51,7 @@ cd() {
   if [ "$#" -gt 0 ]; then
     builtin cd "$@"
   else
-    export FZF_DEFAULT_COMMAND='fd --type d -i -H -d 1'
-    dir=$(fzf --preview "tree -C {} -L 2")
-    if [ -n "$dir" ]; then
-      builtin cd "$dir"
-    fi
+    sd 1
   fi
 }
 
