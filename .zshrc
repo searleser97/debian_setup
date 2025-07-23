@@ -23,16 +23,18 @@ export DOTNET_ROOT=$HOME/.dotnet
 # Set git credential manager store mode
 # export GCM_CREDENTIAL_STORE=cache
 
-fd() {
-  export FZF_DEFAULT_COMMAND='fdfind --type d -i -H -d 13'
-  dir=$(fzf)
+export FZF_DEFAULT_OPTS="--bind ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down"
+
+sd() {
+  export FZF_DEFAULT_COMMAND='fd --type d -i -H -d 13'
+  dir=$(fzf --preview "tree -C {} -L 2")
   if [ -n "$dir" ]; then
     cd "$dir"
   fi
 }
 
-ff() {
-  export FZF_DEFAULT_COMMAND='fdfind --type f -i -H -d 13'
+sf() {
+  export FZF_DEFAULT_COMMAND='fd --type f -i -H -d 13'
   file=$(fzf)
   if [ -n "$file" ]; then
     dir=$(dirname "$file")
@@ -44,14 +46,13 @@ cd() {
   if [ "$#" -gt 0 ]; then
     builtin cd "$@"
   else
-    export FZF_DEFAULT_COMMAND='fdfind --type d -i -H -d 1'
-    dir=$(fzf)
+    export FZF_DEFAULT_COMMAND='fd --type d -i -H -d 1'
+    dir=$(fzf --preview "tree -C {} -L 2")
     if [ -n "$dir" ]; then
       builtin cd "$dir"
     fi
   fi
 }
-
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
