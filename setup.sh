@@ -12,7 +12,7 @@ sudo apt install -t nala nala
 sudo nala install zsh -y
 # set ZShell as default terminal
 chsh -s $(which zsh)
-sudo chsh "$(id -un)" --shell "/usr/bin/zsh"
+sudo chsh "$(id -un)" --shell $(which zsh)
 # Install Oh-My-ZSH
 export RUNZSH="no"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
@@ -28,8 +28,6 @@ sudo nala update
 sudo nala install wezterm -y
 # Install my neovim config
 git clone https://github.com/searleser97/nvim_lua ~/.config/nvim
-# Used by neovim lua lsp, specifically for `vim.loop.<function>` autocompletitions
-git clone https://github.com/Bilal2453/luvit-meta ~/.config/luvit-meta
 # Install my wezterm settings
 cp ~/.config/nvim/.wezterm.lua ~/.wezterm.lua
 # Install my gitconfig settings
