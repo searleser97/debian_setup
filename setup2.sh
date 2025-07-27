@@ -5,7 +5,9 @@ if grep -qi microsoft /proc/version; then
 fi
 
 # Install exfat capabilities
-sudo nala install exfatprogs
+sudo nala install exfatprogs -y
+# Install tmux
+sudo nala install tmux -y
 # Install git-delta
 cargo install git-delta
 # Install git credential manager
