@@ -6,7 +6,8 @@ fi
 # Install pacstall
 sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
 # Install nala
-pacstall -I nala-deb -P
+curl https://gitlab.com/volian/volian-archive/-/raw/main/install-nala.sh | bash
+sudo apt install -t nala nala
 # Install ZSHell
 sudo nala install zsh -y
 # set ZShell as default terminal
