@@ -13,6 +13,7 @@ mkdir -p ~/.oh-my-zsh/custom/plugins/
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 # Install my neovim config
 git clone https://github.com/searleser97/nvim_lua ~/.config/nvim
+mkdir ~/.local/share/nvim/sessions
 # Install my gitconfig settings
 cp ~/.config/nvim/.gitconfig ~/.gitconfig
 # Install rust
