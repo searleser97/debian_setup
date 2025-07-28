@@ -23,11 +23,18 @@ export DOTNET_ROOT=$HOME/.dotnet
 # Set git credential manager store mode
 # export GCM_CREDENTIAL_STORE=cache
 
+# Cross-platform fd command
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    FD_CMD="fd"
+else
+    FD_CMD="fdfind"
+fi
+
 export FZF_DEFAULT_OPTS="--bind ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down"
 
 sd() {
   local depth=${1:-13}
-  export FZF_DEFAULT_COMMAND="(echo '..' && fd --type d -i -H -d $depth)"
+  export FZF_DEFAULT_COMMAND="(echo '..' && $FD_CMD --type d -i -H -d $depth)"
   while true; do
     local dir=$(fzf --preview "tree -C {} -L 1")
     if [ -n "$dir" ]; then
@@ -39,7 +46,7 @@ sd() {
 }
 
 sf() {
-  export FZF_DEFAULT_COMMAND='fd --type f -i -H -d 13'
+  export FZF_DEFAULT_COMMAND="$FD_CMD --type f -i -H -d 13"
   file=$(fzf)
   if [ -n "$file" ]; then
     dir=$(dirname "$file")
@@ -63,9 +70,4 @@ if command -v tmux &> /dev/null && [ -n "$SSH_CONNECTION" ]; then
         tmux attach-session -t main || tmux new-session -s main
     fi
 fi
-
-
-
-
-
 
