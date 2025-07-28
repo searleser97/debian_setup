@@ -28,6 +28,7 @@ sudo nala update
 sudo nala install wezterm -y
 # Install my neovim config
 git clone https://github.com/searleser97/nvim_lua ~/.config/nvim
+mkdir ~/.local/share/nvim/sessions
 # Install my wezterm settings
 cp ~/.config/nvim/.wezterm.lua ~/.wezterm.lua
 # Install my gitconfig settings
