@@ -18,6 +18,8 @@ export RUNZSH="no"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
 # Install my zshrc config
 cat ./.zshrc > ~/.zshrc
+# Install tmux config
+cat ./.tmux.conf > ~/.tmux.conf
 # Install zsh-nvm to load nvm lazily (more details in the .zshrc file)
 mkdir -p ~/.oh-my-zsh/custom/plugins/
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
