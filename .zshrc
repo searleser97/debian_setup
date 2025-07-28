@@ -60,7 +60,7 @@ cd() {
 # Auto-start or attach tmux 'main' session on SSH
 if command -v tmux &> /dev/null && [ -n "$SSH_CONNECTION" ]; then
     if [ -z "$TMUX" ]; then
-        exec tmux attach-session -t main || exec tmux new-session -s main
+        tmux attach-session -t main || tmux new-session -s main
     fi
 fi
 
