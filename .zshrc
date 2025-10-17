@@ -71,3 +71,5 @@ if command -v tmux &> /dev/null && [ -n "$SSH_CONNECTION" ]; then
     fi
 fi
 
+# Copilot alias with allowed tools
+alias copilot='copilot --allow-tool "shell(git)" --allow-tool "shell(rm)" --allow-tool "write" --allow-tool "shell(rg)" --allow-tool "shell(fd)" --allow-tool "shell(grep)"'
