@@ -33,3 +33,6 @@ echo "fs.inotify.max_user_watches=1048576" | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
 
 sudo nala install tmux -y
+
+mkdir ~/.copilot
+cat ./copilot-instructions.md > ~/.copilot/copilot-instructions.md
