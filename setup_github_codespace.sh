@@ -1,3 +1,9 @@
+sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu/ noble main restricted universe multiverse" --yes
+sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu/ noble-updates main restricted universe multiverse" --yes
+sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu/ noble-security main restricted universe multiverse" --yes
+sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak
+sudo apt-get update
+
 # Install nala
 curl https://gitlab.com/volian/volian-archive/-/raw/main/install-nala.sh | bash
 sudo apt install -t nala nala
