@@ -63,11 +63,11 @@ cd() {
 }
 
 ff() {
-  sf()
+  sf
 }
 
 fd() {
-  sd()
+  sd
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -79,6 +79,5 @@ if command -v tmux &> /dev/null && [ -n "$SSH_CONNECTION" ]; then
     fi
 fi
 
-alias fd=fdfind
 # Copilot alias with allowed tools
 alias copilot="copilot --allow-tool 'shell(git add)' --allow-tool 'shell(git commit)' --allow-tool 'shell(git push)' --allow-tool 'shell(git pull)' --allow-tool 'shell(rm)' --allow-tool write --allow-tool 'shell(rg)' --allow-tool 'shell(fd)' --allow-tool 'shell(grep)' --allow-tool 'shell(xargs)' --allow-tool 'shell(sed)' --allow-tool 'shell(awk)' --allow-tool 'shell(cat)' --allow-tool 'shell(dotnet)' --allow-tool 'shell(git merge-base)' --allow-tool 'shell(jq)'"
