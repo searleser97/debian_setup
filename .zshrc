@@ -62,6 +62,14 @@ cd() {
   fi
 }
 
+ff() {
+  sf()
+}
+
+fd() {
+  sd()
+}
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Auto-start or attach tmux 'main' session on SSH
