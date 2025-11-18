@@ -5,6 +5,8 @@ sudo apt install -t nala nala
 sudo chsh "$(id -un)" --shell $(which zsh)
 
 export RUNZSH="no"
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
+
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
 # Install my zshrc config
 cat ./.zshrc > ~/.zshrc
@@ -18,12 +20,11 @@ git clone https://github.com/searleser97/nvim_lua ~/.config/nvim
 mkdir ~/.local/share/nvim/sessions
 # Install my gitconfig settings
 cp ~/.config/nvim/.gitconfig ~/.gitconfig
+# Install utilities
+sudo nala install ripgrep python3-venv wl-clipboard fd-find tmux jq neovim software-properties-common -y
 # Install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 cargo install git-delta
-sudo nala install ripgrep python3-venv wl-clipboard fd-find -y
-sudo apt-get install software-properties-common
-sudo add-apt-repository ppa:neovim-ppa/unstable -y
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
@@ -31,8 +32,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 echo "fs.inotify.max_user_instances=8192" | sudo tee -a /etc/sysctl.conf 
 echo "fs.inotify.max_user_watches=1048576" | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
-
-sudo nala install tmux jq neovim -y
 
 mkdir ~/.copilot
 cat ./copilot-instructions.md > ~/.copilot/copilot-instructions.md
