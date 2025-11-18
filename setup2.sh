@@ -79,6 +79,7 @@ wget -P "$HOME/Downloads" "https://www.synaptics.com/sites/default/files/Ubuntu/
 sudo nala install $HOME/Downloads/synaptics-repository-keyring.deb -y
 sudo nala update
 sudo nala install displaylink-driver -y
+sudo ln -s /usr/bin/fdfind /usr/local/bin/fd
 fi
 
 # Install flutter
