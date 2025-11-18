@@ -8,8 +8,10 @@ sudo apt-get update
 
 # Install nala
 sudo apt-get install nala -y
+
 # Install utilities
 sudo nala install ripgrep python3-venv wl-clipboard fd-find tmux jq neovim software-properties-common -y
+sudo ln -s /usr/bin/fdfind /usr/local/bin/fd
 
 # Install Oh-My-Zsh
 export RUNZSH="no"
