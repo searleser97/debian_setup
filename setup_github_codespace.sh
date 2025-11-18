@@ -24,7 +24,7 @@ cargo install git-delta
 sudo nala install ripgrep python3-venv wl-clipboard fd-find -y
 sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
-sudo nala install neovim -y
+
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 # Roslyn lsp server for .NET C# requires more watch instances than the default in linux
@@ -32,7 +32,7 @@ echo "fs.inotify.max_user_instances=8192" | sudo tee -a /etc/sysctl.conf
 echo "fs.inotify.max_user_watches=1048576" | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
 
-sudo nala install tmux -y
+sudo nala install tmux jq neovim -y
 
 mkdir ~/.copilot
 cat ./copilot-instructions.md > ~/.copilot/copilot-instructions.md
