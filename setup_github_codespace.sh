@@ -36,3 +36,4 @@ sudo nala install tmux -y
 
 mkdir ~/.copilot
 cat ./copilot-instructions.md > ~/.copilot/copilot-instructions.md
+npm install -g @github/copilot
