@@ -28,7 +28,7 @@ cat ./.tmux.conf > ~/.tmux.conf
 
 # Setup Neovim
 git clone https://github.com/searleser97/nvim_lua ~/.config/nvim
-mkdir ~/.local/share/nvim/sessions
+mkdir -p ~/.local/share/nvim/sessions
 
 # Install my gitconfig settings
 cp ~/.config/nvim/.gitconfig ~/.gitconfig
