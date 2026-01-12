@@ -15,6 +15,8 @@ fi
 	&& sudo apt install gh -y
 # install github copilot cli
 npm install -g @github/copilot
+# install claude code cli
+curl -fsSL https://claude.ai/install.sh | bash
 # Install exfat capabilities
 sudo nala install exfatprogs -y
 # Install tmux
@@ -24,6 +26,9 @@ cargo install git-delta
 # Install git credential manager
 dotnet tool install -g git-credential-manager
 git-credential-manager configure
+# Configure Claude Code settings
+mkdir -p ~/.claude
+cp ./claude-settings.json ~/.claude/settings.json
 # Install common neovim dependencies
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
