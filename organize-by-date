@@ -1,0 +1,6 @@
+#!/bin/bash
+if ! command -v node &> /dev/null; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+fi
+node "$HOME/.local/bin/organize-by-date.js" "$@"
