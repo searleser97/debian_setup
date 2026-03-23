@@ -9,7 +9,9 @@ chmod +x ./dotnet-install.sh
 ./dotnet-install.sh --channel 8.0
 ./dotnet-install.sh --channel 9.0
 # Install node version manager to be able to install nodejs after reboot
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+# now nvm gets automatically installed through oh-my-zsh plugins configuration
+
 # Install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
