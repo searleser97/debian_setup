@@ -17,8 +17,11 @@ fi
 npm install -g @github/copilot
 # install claude code cli
 curl -fsSL https://claude.ai/install.sh | bash
-# Install exfat capabilities
-sudo nala install exfatprogs -y
+
+if grep -qi microsoft /proc/version; then
+  # Install exfat capabilities
+  sudo nala install exfatprogs -y
+fi
 # Install tmux
 sudo nala install tmux -y
 # Install git-delta
