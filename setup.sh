@@ -4,7 +4,7 @@ if grep -qi microsoft /proc/version; then
   ISWSL="yes"
 fi
 
-sudo apt install curl wget git
+sudo apt install curl wget git libatomic1
 # Install pacstall
 sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
 # Install nala
