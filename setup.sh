@@ -5,7 +5,7 @@ if grep -qi microsoft /proc/version; then
 fi
 
 # libatomic1 is required for nodejs
-sudo apt install curl wget git libatomic1
+sudo apt install curl wget git libatomic1 build-essential
 # Install pacstall
 sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
 # Install nala
