@@ -18,7 +18,9 @@ sudo nala install zsh curl wget git libatomic1 build-essential libicu-dev tmux r
 # Install/Update neovim nightly
 mkdir -p ~/.local/bin && curl -L https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage -o ~/.local/bin/nvim && chmod +x ~/.local/bin/nvim
 # Install my neovim config
-git clone https://github.com/searleser97/nvim_lua ~/.config/nvim
+if [ ! -d "$HOME/.config/nvim" ]; then
+    git clone https://github.com/searleser97/nvim_lua "$HOME/.config/nvim"
+fi
 mkdir -p ~/.local/share/nvim/sessions
 
 # Install pacstall (pacstall was mainly needed before for nala, but now is not the case)
