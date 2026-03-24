@@ -95,8 +95,10 @@ fi
 # Install my zshrc config
 cat ./.zshrc > ~/.zshrc
 # Install zsh-nvm to load nvm lazily (more details in the .zshrc file)
-mkdir -p ~/.oh-my-zsh/custom/plugins/
-git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-nvm" ]; then
+	mkdir -p ~/.oh-my-zsh/custom/plugins/
+	git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+fi
 
 zsh -i -c "source ~/debian_setup/setup1.sh; exec zsh;"
 
