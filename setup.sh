@@ -96,13 +96,11 @@ fi
 cat ./.zshrc > ~/.zshrc
 # Install Oh-My-ZSH and zsh-nvm to load nvm lazily (more details in the .zshrc file)
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
-	# Install Oh-My-ZSH
 	export RUNZSH="no"
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
-	if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-nvm" ]; then
-		mkdir -p ~/.oh-my-zsh/custom/plugins/
-		git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
-	fi
+
+	mkdir -p ~/.oh-my-zsh/custom/plugins/
+	git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 fi
 
 
