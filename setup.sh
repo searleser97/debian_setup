@@ -1,5 +1,7 @@
-ISWSL="no"
+#!/bin/sh
+set -e
 
+ISWSL="no"
 if grep -qi microsoft /proc/version; then
   ISWSL="yes"
 fi
