@@ -55,11 +55,6 @@ curl -fsSL https://claude.ai/install.sh | bash
 # Configure Claude Code settings
 mkdir -p ~/.claude
 cp ./claude-settings.json ~/.claude/settings.json
-# Install Fzf
-if [ ! -d "$HOME/.fzf" ]; then
-	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-	~/.fzf/install -y
-fi
 # Install dotnet tools to be able to install git credential manager after reboot
 if [ ! -f "$HOME/.dotnet/dotnet" ]; then
 	mkdir -p ~/.dotnet/
@@ -98,7 +93,7 @@ cat ./.zshrc > ~/.zshrc
 mkdir -p ~/.oh-my-zsh/custom/plugins/
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 
-zsh -i -c "~/debian_setup/setup1.sh"
+zsh -i -c "zsh ~/debian_setup/setup1.sh"
 
 if [ "$ISWSL" = "no" ]; then
 	# Install Wezterm
