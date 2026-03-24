@@ -14,5 +14,4 @@ cargo install git-delta
 # Install git credential manager
 dotnet tool install -g git-credential-manager
 git-credential-manager configure
-# looks like now, the installation command also asks me to login already
 # az login
