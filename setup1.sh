@@ -4,6 +4,7 @@ if grep -qi microsoft /proc/version; then
   ISWSL="yes"
 fi
 
+nvm install 24
 # Install git-delta
 cargo install git-delta
 git-credential-manager configure
