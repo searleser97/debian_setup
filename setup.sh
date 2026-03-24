@@ -17,6 +17,9 @@ sudo apt install nala -y
 sudo nala install zsh curl wget git libatomic1 build-essential libicu-dev tmux ripgrep python3-venv fd-find unzip -y
 # Install/Update neovim nightly
 mkdir -p ~/.local/bin && curl -L https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage -o ~/.local/bin/nvim && chmod +x ~/.local/bin/nvim
+# Install my neovim config
+git clone https://github.com/searleser97/nvim_lua ~/.config/nvim
+mkdir -p ~/.local/share/nvim/sessions
 
 # Install pacstall (pacstall was mainly needed before for nala, but now is not the case)
 # sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
@@ -31,9 +34,6 @@ echo "fs.inotify.max_user_watches=1048576" | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
 # Install tmux config
 cat ./.tmux.conf > ~/.tmux.conf
-# Install my neovim config
-git clone https://github.com/searleser97/nvim_lua ~/.config/nvim
-mkdir -p ~/.local/share/nvim/sessions
 # install github cli
 (type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
 	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
