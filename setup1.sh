@@ -1,3 +1,4 @@
+set -e
 ISWSL="no"
 
 if grep -qi microsoft /proc/version; then
