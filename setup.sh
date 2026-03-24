@@ -26,10 +26,6 @@ chmod +x ~/.dotnet/dotnet-install.sh
 ~/.dotnet/dotnet-install.sh --channel 8.0
 ~/.dotnet/dotnet-install.sh --channel 9.0
 
-# Install git credential manager
-dotnet tool install -g git-credential-manager
-git-credential-manager configure
-
 # Install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 # Install git-delta
@@ -58,6 +54,10 @@ git clone https://github.com/searleser97/nvim_lua ~/.config/nvim
 mkdir -p ~/.local/share/nvim/sessions
 # Install my gitconfig settings
 cp ~/.config/nvim/.gitconfig ~/.gitconfig
+
+# Install git credential manager
+~/.dotnet/dotnet tool install -g git-credential-manager
+git-credential-manager configure
 
 if [ "$ISWSL" = "yes" ]; then
 # install win32yank to share clipboard between neovim and windows 11
