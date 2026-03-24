@@ -14,4 +14,8 @@ cargo install git-delta
 # Install git credential manager
 dotnet tool install -g git-credential-manager
 git-credential-manager configure
+
+# set ZShell as default terminal
+chsh -s $(which zsh)
+# sudo chsh "$(id -un)" --shell $(which zsh)
 # az login
