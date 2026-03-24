@@ -4,6 +4,8 @@ if grep -qi microsoft /proc/version; then
   ISWSL="yes"
 fi
 
+# Install git-delta
+cargo install git-delta
 git-credential-manager configure
 az login
 
