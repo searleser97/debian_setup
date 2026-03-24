@@ -6,6 +6,7 @@ if grep -qi microsoft /proc/version; then
   ISWSL="yes"
 fi
 
+sudo chmod u+s /bin/ping
 # Install my gitconfig settings
 cp ./.gitconfig ~/.gitconfig
 # Install nala
@@ -14,7 +15,7 @@ cp ./.gitconfig ~/.gitconfig
 sudo apt install nala -y
 # libatomic1 is required for nodejs
 # libicu-dev is required for dotnet git credential manager
-sudo nala install zsh curl wget git libatomic1 build-essential libicu-dev tmux ripgrep python3-venv fd-find unzip -y
+sudo nala install zsh curl wget git libatomic1 build-essential libicu-dev tmux ripgrep python3-venv fd-find unzip apt-transport-https ca-certificates gnupg lsb-release -y
 # Install/Update neovim nightly
 mkdir -p ~/.local/bin && curl -L https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage -o ~/.local/bin/nvim && chmod +x ~/.local/bin/nvim
 # Install my neovim config
@@ -80,9 +81,20 @@ if [ "$ISWSL" = "yes" ]; then
 	
 	# to be able to restore (install dependencies) dotnet solutions (projects)
 	echo "downloading & installing azure cli deb"
-	curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+	sudo mkdir -p /etc/apt/keyrings
+	curl -sLS https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/keyrings/microsoft.gpg > /dev/null
+	sudo chmod go+r /etc/apt/keyrings/microsoft.gpg
+	AZ_DIST=$(lsb_release -cs)
+	echo "Types: deb
+	URIs: https://packages.microsoft.com/repos/azure-cli/
+	Suites: ${AZ_DIST}
+	Components: main
+	Architectures: $(dpkg --print-architecture)
+	Signed-by: /etc/apt/keyrings/microsoft.gpg" | sudo tee /etc/apt/sources.list.d/azure-cli.sources
 	echo "downloading & installing microsoft credprovider"
 	wget -qO- https://aka.ms/install-artifacts-credprovider.sh | bash
+	sudo apt-get update
+	sudo apt-get install azure-cli
 fi
 
 # Install Oh-My-ZSH
