@@ -63,8 +63,7 @@ wget https://dot.net/v1/dotnet-install.sh -O ~/.dotnet/dotnet-install.sh
 chmod +x ~/.dotnet/dotnet-install.sh
 ~/.dotnet/dotnet-install.sh --channel 8.0
 ~/.dotnet/dotnet-install.sh --channel 9.0
-# Install git credential manager
-~/.dotnet/dotnet tool install -g git-credential-manager
+
 if [ "$ISWSL" = "yes" ]; then
 # install win32yank to share clipboard between neovim and windows 11
 curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip
