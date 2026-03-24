@@ -5,29 +5,25 @@ if grep -qi microsoft /proc/version; then
   ISWSL="yes"
 fi
 
+export NVM_DIR="$HOME/.nvm"
+source "$NVM_DIR/nvm.sh"
+nvm install --lts
+
 # Install Fzf
 if [ ! -d "$HOME/.fzf" ]; then
 	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 	~/.fzf/install --all
 fi
-
-export NVM_DIR="$HOME/.nvm"
-source "$NVM_DIR/nvm.sh"
-
-nvm install --lts
 # Install git-delta
 cargo install git-delta
 # Install git credential manager
 dotnet tool install -g git-credential-manager
 git-credential-manager configure
-
-
 # Install Oh-My-ZSH
 # export RUNZSH="no"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
 # looks like now, the installation command also asks me to login already
 # az login
-
 if [ "$ISWSL" = "no" ]; then
 # Install grub-customizer
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y
