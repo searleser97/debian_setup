@@ -8,7 +8,7 @@ fi
 # Install Oh-My-ZSH and zsh-nvm to load nvm lazily (more details in the .zshrc file)
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
 	export RUNZSH="no"
-	export ZSH_DISABLE_SHELL_CHANGE_PROMPT=true
+	export SHELL=$(which zsh)
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
 
 	mkdir -p ~/.oh-my-zsh/custom/plugins/
