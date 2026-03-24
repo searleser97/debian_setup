@@ -85,6 +85,8 @@ cat ./.zshrc > ~/.zshrc
 mkdir -p ~/.oh-my-zsh/custom/plugins/
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 
+zsh -i -c "~/debian_setup/setup1.sh"
+
 if [ "$ISWSL" = "no" ]; then
 # Install Wezterm
 curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
