@@ -5,6 +5,12 @@ if grep -qi microsoft /proc/version; then
   ISWSL="yes"
 fi
 
+# Install Fzf
+if [ ! -d "$HOME/.fzf" ]; then
+	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	~/.fzf/install -y
+fi
+
 export NVM_DIR="$HOME/.nvm"
 source "$NVM_DIR/nvm.sh"
 
