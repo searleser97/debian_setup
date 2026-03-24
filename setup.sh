@@ -21,15 +21,15 @@ mkdir -p ~/.local/bin && curl -L https://github.com/neovim/neovim/releases/downl
 # Install my neovim config
 if [ ! -d "$HOME/.config/nvim" ]; then
     git clone https://github.com/searleser97/nvim_lua "$HOME/.config/nvim"
+	mkdir -p ~/.local/share/nvim/sessions
 fi
-mkdir -p ~/.local/share/nvim/sessions
 
 # Install pacstall (pacstall was mainly needed before for nala, but now is not the case)
 # sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
 
 # Install rust
 if [ ! -f "$HOME/.cargo/bin/cargo" ]; then
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 fi
 
 # Roslyn lsp server for .NET C# requires more watch instances than the default in linux
@@ -40,25 +40,25 @@ sudo sysctl -p
 cat ./.tmux.conf > ~/.tmux.conf
 # install github cli
 if [ ! -f "/usr/bin/gh" ]; then
-(type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
-	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
-	&& out=$(mktemp) && wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
-	&& cat $out | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
-	&& sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
-	&& sudo mkdir -p -m 755 /etc/apt/sources.list.d \
-	&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-	&& sudo apt update \
-	&& sudo apt install gh -y
+	(type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
+		&& sudo mkdir -p -m 755 /etc/apt/keyrings \
+		&& out=$(mktemp) && wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
+		&& cat $out | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
+		&& sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
+		&& sudo mkdir -p -m 755 /etc/apt/sources.list.d \
+		&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+		&& sudo apt update \
+		&& sudo apt install gh -y
 fi
 # install copilot cli
 if [ ! -f "$HOME/.local/bin/copilot" ]; then
-curl -fsSL https://gh.io/copilot-install | bash
-mkdir -p ~/.copilot/
-cp ./copilot-instructions.md ~/.copilot/
+	curl -fsSL https://gh.io/copilot-install | bash
+	mkdir -p ~/.copilot/
+	cp ./copilot-instructions.md ~/.copilot/
 fi
 # install claude code cli
 if [ ! -f "$HOME/.local/bin/claude" ]; then
-curl -fsSL https://claude.ai/install.sh | bash
+	curl -fsSL https://claude.ai/install.sh | bash
 fi
 # Configure Claude Code settings
 mkdir -p ~/.claude
