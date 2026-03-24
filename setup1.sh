@@ -19,9 +19,6 @@ cargo install git-delta
 # Install git credential manager
 dotnet tool install -g git-credential-manager
 git-credential-manager configure
-# Install Oh-My-ZSH
-# export RUNZSH="no"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
 # looks like now, the installation command also asks me to login already
 # az login
 if [ "$ISWSL" = "no" ]; then
