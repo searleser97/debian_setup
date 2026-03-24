@@ -5,16 +5,6 @@ if grep -qi microsoft /proc/version; then
   ISWSL="yes"
 fi
 
-# Install Oh-My-ZSH and zsh-nvm to load nvm lazily (more details in the .zshrc file)
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-	export RUNZSH="no"
-	export SHELL=$(which zsh)
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
-
-	mkdir -p ~/.oh-my-zsh/custom/plugins/
-	git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
-fi
-
 export NVM_DIR="$HOME/.nvm"
 source "$NVM_DIR/nvm.sh"
 nvm install --lts
