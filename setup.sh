@@ -75,7 +75,6 @@ sudo mv /tmp/win32yank.exe /usr/local/bin/win32yank.exe
 # to be able to restore (install dependencies) dotnet solutions (projects)
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 wget -qO- https://aka.ms/install-artifacts-credprovider.sh | bash
-#az login
 fi
 # Install Oh-My-ZSH
 export RUNZSH="no"
@@ -89,7 +88,6 @@ cat ./.zshrc > ~/.zshrc
 mkdir -p ~/.oh-my-zsh/custom/plugins/
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 
-git-credential-manager configure
 if [ "$ISWSL" = "no" ]; then
 # Install Wezterm
 curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
