@@ -93,7 +93,7 @@ cat ./.zshrc > ~/.zshrc
 mkdir -p ~/.oh-my-zsh/custom/plugins/
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 
-zsh -i -c "zsh ~/debian_setup/setup1.sh"
+zsh -i -c "source ~/debian_setup/setup1.sh; exec zsh;"
 
 if [ "$ISWSL" = "no" ]; then
 	# Install Wezterm
