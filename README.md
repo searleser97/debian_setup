@@ -5,7 +5,7 @@ This repository contains configuration files and setup scripts for a Debian deve
 # Command to run initially
 
 ```bash
-cd ~ && sudo apt update && sudo apt install git -y && git clone https://github.com/searleser97/debian_setup && cd debian_setup
+cd ~ && sudo apt update && sudo apt install git -y && git clone https://github.com/searleser97/debian_setup && cd debian_setup && source setup.sh
 ```
 
 ## Configuration Files
