@@ -7,7 +7,9 @@ export NVM_LAZY_LOAD=true
 export NVM_LAZY_LOAD_EXTRA_COMMANDS=('nvim')
 
 plugins=(git zsh-nvm)
-source $ZSH/oh-my-zsh.sh
+if [ -f "$ZSH/oh-my-zsh.sh" ]; then
+    source $ZSH/oh-my-zsh.sh
+fi
 
 # Android SDK
 export ANDROID=$HOME/Android
