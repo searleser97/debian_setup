@@ -30,6 +30,7 @@ mkdir -p ~/.local/share/nvim/sessions
 # Install rust
 if [ ! -f "$HOME/.cargo/bin/cargo" ]; then
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+fi
 
 # Roslyn lsp server for .NET C# requires more watch instances than the default in linux
 echo "fs.inotify.max_user_instances=8192" | sudo tee -a /etc/sysctl.conf 
