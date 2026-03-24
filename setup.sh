@@ -56,7 +56,7 @@ mkdir -p ~/.claude
 cp ./claude-settings.json ~/.claude/settings.json
 # Install Fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+~/.fzf/install -y
 # Install dotnet tools to be able to install git credential manager after reboot
 mkdir -p ~/.dotnet/
 wget https://dot.net/v1/dotnet-install.sh -O ~/.dotnet/dotnet-install.sh
