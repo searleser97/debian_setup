@@ -17,7 +17,11 @@ sudo apt install nala -y
 # libicu-dev is required for dotnet git credential manager
 sudo nala install zsh curl wget git libatomic1 build-essential libicu-dev tmux ripgrep python3-venv fd-find unzip apt-transport-https ca-certificates gnupg lsb-release -y
 # Install/Update neovim nightly
-mkdir -p ~/.local/bin && curl -L https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage -o ~/.local/bin/nvim && chmod +x ~/.local/bin/nvim
+mkdir -p ~/.local/bin
+curl -Lo /tmp/nvim-linux-x86_64.tar.gz https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.tar.gz
+sudo rm -rf /opt/nvim-linux-x86_64
+sudo tar -C /opt -xzf /tmp/nvim-linux-x86_64.tar.gz
+
 # Install my neovim config
 if [ ! -d "$HOME/.config/nvim" ]; then
     git clone https://github.com/searleser97/nvim_lua "$HOME/.config/nvim"
@@ -75,7 +79,7 @@ fi
 if [ "$ISWSL" = "yes" ]; then
 	echo "Downloading win32yank"
 	# install win32yank to share clipboard between neovim and windows 11
-	curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip
+	curl -sLo /tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip
 	echo "downloaded win32yank"
 	unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
 	echo "unzipping win32yank.exe"
