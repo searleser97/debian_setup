@@ -14,7 +14,8 @@ cargo install git-delta
 # Install git credential manager
 dotnet tool install -g git-credential-manager
 git-credential-manager configure
-az login
+# looks like now, the installation command also asks me to login already
+# az login
 
 if [ "$ISWSL" = "no" ]; then
 # Install grub-customizer
