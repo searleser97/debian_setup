@@ -89,15 +89,13 @@ if [ "$ISWSL" = "yes" ]; then
 	wget -qO- https://aka.ms/install-artifacts-credprovider.sh | bash
 fi
 
-# set ZShell as default terminal
-chsh -s $(which zsh)
-sudo chsh "$(id -un)" --shell $(which zsh)
 # Install my zshrc config
 cat ./.zshrc > ~/.zshrc
 
 # Install Oh-My-ZSH and zsh-nvm to load nvm lazily (more details in the .zshrc file)
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
 	export RUNZSH="no"
+	# to prevent oh-my-zsh from prompting if we want to set zsh as default
 	export SHELL=$(which zsh)
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
 
