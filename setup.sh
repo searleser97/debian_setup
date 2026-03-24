@@ -7,9 +7,7 @@ if grep -qi microsoft /proc/version; then
 fi
 
 # Install my gitconfig settings
-cp ~/.config/nvim/.gitconfig ~/.gitconfig
-
-sudo apt update
+cp ./.gitconfig ~/.gitconfig
 # Install nala
 #curl https://gitlab.com/volian/volian-archive/-/raw/main/install-nala.sh | bash
 #sudo apt install -t nala nala
