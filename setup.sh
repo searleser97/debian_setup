@@ -108,6 +108,14 @@ fi
 zsh -i -c "source ~/debian_setup/setup1.sh; exec zsh;"
 
 if [ "$ISWSL" = "no" ]; then
+	# Install grub-customizer
+	sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y
+	sudo nala install grub-customizer -y
+	# Install wacom tablet settings gui
+	# sudo nala install kde-config-tablet -y
+	# Install nordvpn
+	sh <(wget -qO - https://downloads.nordcdn.com/apps/linux/install.sh) -p nordvpn-gui
+	sudo usermod -aG nordvpn $USER
 	# Install Wezterm
 	curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
 	echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
