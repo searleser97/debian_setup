@@ -39,19 +39,6 @@ echo "fs.inotify.max_user_instances=8192" | sudo tee -a /etc/sysctl.conf
 echo "fs.inotify.max_user_watches=1048576" | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
 
-if [ "$ISWSL" = "yes" ]; then
-# install win32yank to share clipboard between neovim and windows 11
-curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip
-unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
-chmod +x /tmp/win32yank.exe
-sudo mv /tmp/win32yank.exe /usr/local/bin/win32yank.exe
-
-# to be able to restore (install dependencies) dotnet solutions (projects)
-curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-wget -qO- https://aka.ms/install-artifacts-credprovider.sh | bash
-az login
-fi
-
 # Install Oh-My-ZSH
 export RUNZSH="no"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
@@ -70,6 +57,19 @@ git clone https://github.com/searleser97/nvim_lua ~/.config/nvim
 mkdir -p ~/.local/share/nvim/sessions
 # Install my gitconfig settings
 cp ~/.config/nvim/.gitconfig ~/.gitconfig
+
+if [ "$ISWSL" = "yes" ]; then
+# install win32yank to share clipboard between neovim and windows 11
+curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip
+unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
+chmod +x /tmp/win32yank.exe
+sudo mv /tmp/win32yank.exe /usr/local/bin/win32yank.exe
+
+# to be able to restore (install dependencies) dotnet solutions (projects)
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+wget -qO- https://aka.ms/install-artifacts-credprovider.sh | bash
+az login
+fi
 
 if [ "$ISWSL" = "no" ]; then
 # Install Wezterm
