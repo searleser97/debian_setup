@@ -37,6 +37,7 @@ sudo sysctl -p
 # Install tmux config
 cat ./.tmux.conf > ~/.tmux.conf
 # install github cli
+if [ ! -f "$HOME/usr/bin/gh" ]; then
 (type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
 	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
 	&& out=$(mktemp) && wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
@@ -46,12 +47,17 @@ cat ./.tmux.conf > ~/.tmux.conf
 	&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
 	&& sudo apt update \
 	&& sudo apt install gh -y
+fi
 # install copilot cli
+if [ ! -f "$HOME/.local/bin/copilot" ]; then
 curl -fsSL https://gh.io/copilot-install | bash
 mkdir -p ~/.copilot/
 cp ./copilot-instructions.md ~/.copilot/
+fi
 # install claude code cli
+if [ ! -f "$HOME/.local/bin/claude" ]; then
 curl -fsSL https://claude.ai/install.sh | bash
+fi
 # Configure Claude Code settings
 mkdir -p ~/.claude
 cp ./claude-settings.json ~/.claude/settings.json
