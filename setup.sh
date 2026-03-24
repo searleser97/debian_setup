@@ -52,7 +52,6 @@ wget -qO- https://aka.ms/install-artifacts-credprovider.sh | bash
 az login
 fi
 
-
 # Install Oh-My-ZSH
 export RUNZSH="no"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
