@@ -100,6 +100,10 @@ if [ ! -d "$HOME/.oh-my-zsh/custom/plugins/zsh-nvm" ]; then
 	git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 fi
 
+# Install Oh-My-ZSH
+# export RUNZSH="no"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
+
 zsh -i -c "source ~/debian_setup/setup1.sh; exec zsh;"
 
 if [ "$ISWSL" = "no" ]; then
