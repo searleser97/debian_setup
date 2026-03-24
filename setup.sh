@@ -83,9 +83,9 @@ git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-
 # Install Oh-My-ZSH
 export RUNZSH="no"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc -y
-# set ZShell as default terminal
-chsh -s $(which zsh)
-sudo chsh "$(id -un)" --shell $(which zsh)
+# set ZShell as default terminal (the oh-my-zsh script now can set zsh as default)
+# chsh -s $(which zsh)
+# sudo chsh "$(id -un)" --shell $(which zsh)
 
 git-credential-manager configure
 if [ "$ISWSL" = "no" ]; then
