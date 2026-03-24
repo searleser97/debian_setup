@@ -73,7 +73,7 @@ sudo mv /tmp/win32yank.exe /usr/local/bin/win32yank.exe
 # to be able to restore (install dependencies) dotnet solutions (projects)
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 wget -qO- https://aka.ms/install-artifacts-credprovider.sh | bash
-az login
+#az login
 fi
 # Install my zshrc config
 cat ./.zshrc > ~/.zshrc
