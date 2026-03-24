@@ -7,8 +7,8 @@ fi
 # libatomic1 is required for nodejs
 # libicu-dev is required for dotnet git credential manager
 sudo apt install curl wget git libatomic1 build-essential libicu-dev
-# Install pacstall
-sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
+# Install pacstall (pacstall was mainly needed before for nala, but now is not the case)
+# sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
 # Install nala
 #curl https://gitlab.com/volian/volian-archive/-/raw/main/install-nala.sh | bash
 #sudo apt install -t nala nala
