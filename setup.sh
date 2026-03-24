@@ -69,15 +69,19 @@ if [ ! -f "$HOME/.dotnet/dotnet" ]; then
 fi
 
 if [ "$ISWSL" = "yes" ]; then
-	echo "Installing wsl specific utilities"
+	echo "Downloading win32yank"
 	# install win32yank to share clipboard between neovim and windows 11
 	curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip
+	echo "downloaded win32yank"
 	unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
+	echo "unzipping win32yank.exe"
 	chmod +x /tmp/win32yank.exe
 	sudo mv /tmp/win32yank.exe /usr/local/bin/win32yank.exe
 	
 	# to be able to restore (install dependencies) dotnet solutions (projects)
+	echo "downloading & installing azure cli deb"
 	curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+	echo "downloading & installing microsoft credprovider"
 	wget -qO- https://aka.ms/install-artifacts-credprovider.sh | bash
 fi
 
