@@ -26,8 +26,7 @@ mkdir -p ~/.local/share/nvim/sessions
 
 # Install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-# Install git-delta
-cargo install git-delta
+
 # Roslyn lsp server for .NET C# requires more watch instances than the default in linux
 echo "fs.inotify.max_user_instances=8192" | sudo tee -a /etc/sysctl.conf 
 echo "fs.inotify.max_user_watches=1048576" | sudo tee -a /etc/sysctl.conf
