@@ -28,6 +28,7 @@ mkdir -p ~/.local/share/nvim/sessions
 # sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
 
 # Install rust
+if [ ! -f "$HOME/.cargo/bin/cargo" ]; then
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # Roslyn lsp server for .NET C# requires more watch instances than the default in linux
@@ -37,7 +38,7 @@ sudo sysctl -p
 # Install tmux config
 cat ./.tmux.conf > ~/.tmux.conf
 # install github cli
-if [ ! -f "$HOME/usr/bin/gh" ]; then
+if [ ! -f "/usr/bin/gh" ]; then
 (type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
 	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
 	&& out=$(mktemp) && wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
