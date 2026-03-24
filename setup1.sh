@@ -3,17 +3,9 @@ ISWSL="no"
 if grep -qi microsoft /proc/version; then
   ISWSL="yes"
 fi
-# Install dotnet tools to be able to install git credential manager after reboot
-wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
-chmod +x ./dotnet-install.sh
-./dotnet-install.sh --channel 8.0
-./dotnet-install.sh --channel 9.0
-# Install node version manager to be able to install nodejs after reboot
-# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-# now nvm gets automatically installed through oh-my-zsh plugins configuration
 
-# Install rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+git-credential-manager configure
+az login
 
 if [ "$ISWSL" = "no" ]; then
 # Install grub-customizer
@@ -25,5 +17,3 @@ sudo nala install grub-customizer -y
 sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
 sudo usermod -aG nordvpn $USER
 fi
-
-wezterm start --always-new-process --cwd $(pwd) zsh -c "source setup2.sh"
