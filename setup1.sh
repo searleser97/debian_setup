@@ -20,6 +20,6 @@ sudo nala install grub-customizer -y
 # Install wacom tablet settings gui
 # sudo nala install kde-config-tablet -y
 # Install nordvpn
-sh <(curl -sSf https://downloads.nordcdn.com/apps/linux/install.sh)
+sh <(wget -qO - https://downloads.nordcdn.com/apps/linux/install.sh) -p nordvpn-gui
 sudo usermod -aG nordvpn $USER
 fi
