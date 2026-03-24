@@ -17,7 +17,6 @@ sudo apt install nala -y
 # libicu-dev is required for dotnet git credential manager
 sudo nala install zsh curl wget git libatomic1 build-essential libicu-dev tmux ripgrep python3-venv fd-find unzip apt-transport-https ca-certificates gnupg lsb-release -y
 # Install/Update neovim nightly
-mkdir -p ~/.local/bin
 curl -Lo /tmp/nvim-linux-x86_64.tar.gz https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.tar.gz
 sudo rm -rf /opt/nvim-linux-x86_64
 sudo tar -C /opt -xzf /tmp/nvim-linux-x86_64.tar.gz
