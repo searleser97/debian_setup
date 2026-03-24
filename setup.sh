@@ -20,10 +20,11 @@ mkdir -p ~/.local/bin && curl -L https://github.com/neovim/neovim/releases/downl
 # Install pacstall (pacstall was mainly needed before for nala, but now is not the case)
 # sudo bash -c "$(curl -fsSL https://pacstall.dev/q/install || wget -q https://pacstall.dev/q/install -O -)"
 # Install dotnet tools to be able to install git credential manager after reboot
-wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
-chmod +x ./dotnet-install.sh
-./dotnet-install.sh --channel 8.0
-./dotnet-install.sh --channel 9.0
+mkdir -p ~/.dotnet/
+wget https://dot.net/v1/dotnet-install.sh -O ~/.dotnet/dotnet-install.sh
+chmod +x ~/.dotnet/dotnet-install.sh
+~/.dotnet/dotnet-install.sh --channel 8.0
+~/.dotnet/dotnet-install.sh --channel 9.0
 
 # Install git credential manager
 dotnet tool install -g git-credential-manager
