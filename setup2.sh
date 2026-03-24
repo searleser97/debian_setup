@@ -3,51 +3,11 @@ ISWSL="no"
 if grep -qi microsoft /proc/version; then
   ISWSL="yes"
 fi
-# install github cli
-(type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
-	&& sudo mkdir -p -m 755 /etc/apt/keyrings \
-	&& out=$(mktemp) && wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
-	&& cat $out | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
-	&& sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
-	&& sudo mkdir -p -m 755 /etc/apt/sources.list.d \
-	&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-	&& sudo apt update \
-	&& sudo apt install gh -y
-# install github copilot cli
-npm install -g @github/copilot
-# install claude code cli
-curl -fsSL https://claude.ai/install.sh | bash
 
 if grep -qi microsoft /proc/version; then
   # Install exfat capabilities
   sudo nala install exfatprogs -y
 fi
-# Install tmux
-sudo nala install tmux -y
-# Install git-delta
-cargo install git-delta
-# Install git credential manager
-dotnet tool install -g git-credential-manager
-git-credential-manager configure
-# Configure Claude Code settings
-mkdir -p ~/.claude
-cp ./claude-settings.json ~/.claude/settings.json
-# Install common neovim dependencies
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-nvm install node
-sudo nala install ripgrep python3-venv wl-clipboard fd-find -y
-# Install/Update neovim nightly
-mkdir -p ~/.local/bin && curl -L https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage -o ~/.local/bin/nvim && chmod +x ~/.local/bin/nvim
-
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-
-# Roslyn lsp server for .NET C# requires more watch instances than the default in linux
-echo "fs.inotify.max_user_instances=8192" | sudo tee -a /etc/sysctl.conf 
-echo "fs.inotify.max_user_watches=1048576" | sudo tee -a /etc/sysctl.conf
-sudo sysctl -p
 
 if [ "$ISWSL" = "no" ]; then
 # Install VSCode
@@ -86,7 +46,6 @@ wget -P "$HOME/Downloads" "https://www.synaptics.com/sites/default/files/Ubuntu/
 sudo nala install $HOME/Downloads/synaptics-repository-keyring.deb -y
 sudo nala update
 sudo nala install displaylink-driver -y
-sudo ln -s /usr/bin/fdfind /usr/local/bin/fd
 fi
 
 # Install flutter
@@ -104,19 +63,6 @@ fi
 # flutter doctor
 # flutter doctor --android-licenses
 # flutter doctor
-
-if [ "$ISWSL" = "yes" ]; then
-# install win32yank to share clipboard between neovim and windows 11
-curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip
-unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
-chmod +x /tmp/win32yank.exe
-sudo mv /tmp/win32yank.exe /usr/local/bin/win32yank.exe
-
-# to be able to restore (install dependencies) dotnet solutions (projects)
-curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-wget -qO- https://aka.ms/install-artifacts-credprovider.sh | bash
-az login
-fi
 
 echo "Click [Enter] to continue with the last step"
 read A
