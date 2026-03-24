@@ -7,6 +7,8 @@ fi
 nvm install --lts
 # Install git-delta
 cargo install git-delta
+# Install git credential manager
+dotnet tool install -g git-credential-manager
 git-credential-manager configure
 az login
 
