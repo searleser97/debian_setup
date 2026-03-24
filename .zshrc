@@ -24,6 +24,7 @@ export DOTNET_ROOT=$HOME/.dotnet
 
 # Add my executables to the path
 export PATH=$HOME/.local/bin:$PATH
+export PATH="/opt/nvim-linux-x86_64/bin:$PATH"
 
 # Set git credential manager store mode
 # export GCM_CREDENTIAL_STORE=cache
