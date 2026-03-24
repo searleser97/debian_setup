@@ -20,6 +20,9 @@ export PATH=$HOME/.dotnet:$PATH
 export PATH=$HOME/ProgramFiles/netcoredbg:$PATH
 export DOTNET_ROOT=$HOME/.dotnet
 
+# Add my executables to the path
+export PATH=$HOME/.local/bin:$PATH
+
 # Set git credential manager store mode
 # export GCM_CREDENTIAL_STORE=cache
 
