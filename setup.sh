@@ -46,6 +46,7 @@ cat ./.tmux.conf > ~/.tmux.conf
 	&& sudo apt install gh -y
 # install copilot cli
 curl -fsSL https://gh.io/copilot-install | bash
+cp ./copilot-instructions.md ~/.copilot/
 # install claude code cli
 curl -fsSL https://claude.ai/install.sh | bash
 # Configure Claude Code settings
