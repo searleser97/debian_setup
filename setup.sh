@@ -81,9 +81,6 @@ if [ "$ISWSL" = "yes" ]; then
 	wget -qO- https://aka.ms/install-artifacts-credprovider.sh | bash
 fi
 
-# Install Oh-My-ZSH
-export RUNZSH="no"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc -y
 # set ZShell as default terminal (the oh-my-zsh script now can set zsh as default)
 # chsh -s $(which zsh)
 # sudo chsh "$(id -un)" --shell $(which zsh)
