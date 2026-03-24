@@ -89,20 +89,11 @@ if [ "$ISWSL" = "yes" ]; then
 	wget -qO- https://aka.ms/install-artifacts-credprovider.sh | bash
 fi
 
-# set ZShell as default terminal (the oh-my-zsh script now can set zsh as default)
-# chsh -s $(which zsh)
-# sudo chsh "$(id -un)" --shell $(which zsh)
+# set ZShell as default terminal
+chsh -s $(which zsh)
+sudo chsh "$(id -un)" --shell $(which zsh)
 # Install my zshrc config
 cat ./.zshrc > ~/.zshrc
-# Install Oh-My-ZSH and zsh-nvm to load nvm lazily (more details in the .zshrc file)
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-	export RUNZSH="no"
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
-
-	mkdir -p ~/.oh-my-zsh/custom/plugins/
-	git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
-fi
-
 
 zsh -i -c "source ~/debian_setup/setup1.sh; exec zsh;"
 
