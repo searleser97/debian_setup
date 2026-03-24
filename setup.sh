@@ -95,6 +95,16 @@ sudo chsh "$(id -un)" --shell $(which zsh)
 # Install my zshrc config
 cat ./.zshrc > ~/.zshrc
 
+# Install Oh-My-ZSH and zsh-nvm to load nvm lazily (more details in the .zshrc file)
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+	export RUNZSH="no"
+	export SHELL=$(which zsh)
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
+
+	mkdir -p ~/.oh-my-zsh/custom/plugins/
+	git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+fi
+
 zsh -i -c "source ~/debian_setup/setup1.sh; exec zsh;"
 
 if [ "$ISWSL" = "no" ]; then
