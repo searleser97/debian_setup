@@ -75,17 +75,17 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 wget -qO- https://aka.ms/install-artifacts-credprovider.sh | bash
 #az login
 fi
-# Install my zshrc config
-cat ./.zshrc > ~/.zshrc
-# Install zsh-nvm to load nvm lazily (more details in the .zshrc file)
-mkdir -p ~/.oh-my-zsh/custom/plugins/
-git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 # Install Oh-My-ZSH
 export RUNZSH="no"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc -y
 # set ZShell as default terminal (the oh-my-zsh script now can set zsh as default)
 # chsh -s $(which zsh)
 # sudo chsh "$(id -un)" --shell $(which zsh)
+# Install my zshrc config
+cat ./.zshrc > ~/.zshrc
+# Install zsh-nvm to load nvm lazily (more details in the .zshrc file)
+mkdir -p ~/.oh-my-zsh/custom/plugins/
+git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 
 git-credential-manager configure
 if [ "$ISWSL" = "no" ]; then
