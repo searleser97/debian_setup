@@ -78,12 +78,14 @@ fd() {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Auto-start or attach tmux 'main' session on SSH
-if command -v tmux &> /dev/null && [ -n "$SSH_CONNECTION" ]; then
-    if [ -z "$TMUX" ]; then
-        ## tmux attach-session -t main || tmux new-session -s main
-        tmux new-session
-    fi
+# On SSH: if not already inside tmux, list active tmux sessions (if any) + hint
+if command -v tmux &> /dev/null && [ -n "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
+  if tmux has-session 2>/dev/null; then
+    echo "Active tmux sessions:"
+    tmux list-sessions
+    echo
+    echo "Hint: attach with  tmux attach -t <session-name>   (or just: tmux attach)"
+  fi
 fi
 
 # Copilot alias with allowed tools
