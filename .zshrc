@@ -4,7 +4,9 @@ export ZSH_THEME="jonathan"
 export NVM_DIR="$HOME/.nvm"
 export NVM_COMPLETION=true
 export NVM_LAZY_LOAD=true
-export NVM_LAZY_LOAD_EXTRA_COMMANDS=('nvim')
+# I am already getting the node binary for nvim withi the init.lua file over there, lazy loading node via nvim command is no longer needed
+# plus, it made nvim first time loading slow
+# export NVM_LAZY_LOAD_EXTRA_COMMANDS=('nvim')
 
 plugins=(git zsh-nvm)
 if [ -f "$ZSH/oh-my-zsh.sh" ]; then
