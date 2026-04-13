@@ -105,6 +105,7 @@ fi
 
 # Install my zshrc config
 cat ./.zshrc > ~/.zshrc
+cat ./.zlogin > ~/.zlogin
 
 INSTALL_MARKER="$HOME/.oh-my-zsh/.install_complete"
 # Install Oh-My-ZSH and zsh-nvm to load nvm lazily (more details in the .zshrc file)
