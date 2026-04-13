@@ -80,12 +80,17 @@ fd() {
 
 # On SSH: if not already inside tmux, list active tmux sessions (if any) + hint
 if command -v tmux &> /dev/null && [ -n "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
+  echo
   if tmux has-session 2>/dev/null; then
     echo "Active tmux sessions:"
     tmux list-sessions
     echo
     echo "Hint: attach with  tmux attach -t <session-name>   (or just: tmux attach)"
+  else
+    echo "No active tmux sessions."
+    echo "Hint: start one with  tmux"
   fi
+  echo
 fi
 
 # Copilot alias with allowed tools
