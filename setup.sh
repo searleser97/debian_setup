@@ -7,10 +7,9 @@ if grep -qi microsoft /proc/version; then
 fi
 
 IS_CODESPACES=false
-if [[ "${CODESPACES:-}" == "true" || -n "${CODESPACE_NAME:-}" ]]; then
+if [ "${CODESPACES:-}" == "true" || -n "${CODESPACE_NAME:-}" ]; then
   IS_CODESPACES=true
 fi
-
 
 # install ping command 
 #sudo chmod u+s /bin/ping
