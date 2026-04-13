@@ -6,7 +6,10 @@ if grep -qi microsoft /proc/version; then
   ISWSL="yes"
 fi
 
-sudo chmod u+s /bin/ping
+# install ping command 
+#sudo chmod u+s /bin/ping
+sudo apt update
+sudo apt install iputils-ping
 # Install my gitconfig settings
 cp ./.gitconfig ~/.gitconfig
 # Install nala
