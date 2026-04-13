@@ -78,20 +78,5 @@ fd() {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# On SSH: if not already inside tmux, list active tmux sessions (if any) + hint
-if command -v tmux &> /dev/null && [ -n "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
-  echo
-  if tmux has-session 2>/dev/null; then
-    echo "Active tmux sessions:"
-    tmux list-sessions
-    echo
-    echo "Hint: attach with  tmux attach -t <session-name>   (or just: tmux attach)"
-  else
-    echo "No active tmux sessions."
-    echo "Hint: start one with  tmux"
-  fi
-  echo
-fi
-
 # Copilot alias with allowed tools
 alias copilot="copilot --allow-tool 'shell(git add)' --allow-tool 'shell(git commit)' --allow-tool 'shell(git push)' --allow-tool 'shell(git pull)' --allow-tool 'shell(rm)' --allow-tool write --allow-tool 'shell(rg)' --allow-tool 'shell(fd)' --allow-tool 'shell(grep)' --allow-tool 'shell(xargs)' --allow-tool 'shell(sed)' --allow-tool 'shell(awk)' --allow-tool 'shell(cat)' --allow-tool 'shell(dotnet)' --allow-tool 'shell(git merge-base)' --allow-tool 'shell(jq)' --allow-tool 'shell(git rm)' --allow-tool 'shell(git mv)'"
