@@ -109,6 +109,10 @@ cat ./.zshrc > ~/.zshrc
 INSTALL_MARKER="$HOME/.oh-my-zsh/.install_complete"
 # Install Oh-My-ZSH and zsh-nvm to load nvm lazily (more details in the .zshrc file)
 if [ ! -f "$INSTALL_MARKER" ]; then
+	 # Clean up any partial previous install
+	if [ -d "$HOME/.oh-my-zsh" ]; then
+			rm -rf "$HOME/.oh-my-zsh"
+	fi
 	export RUNZSH="no"
 	# to prevent oh-my-zsh from prompting if we want to set zsh as default
 	export SHELL=$(which zsh)
