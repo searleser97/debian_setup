@@ -3,7 +3,7 @@
 This repository contains configuration files and setup scripts for a Debian development environment.
 
 # If installing in wsl
-Please first ensure that Global Secure Access Client is uninstalled, this can only be done through the control panel in the old way.
+Please first ensure that Global Secure Access Client is disabled (or uninstalled, this can only be done through the control panel in the old way). This is so that the network connection works as expected.
 
 And ensure that the .wslconfig file is already copied from this repository to the windows $HOME directory.
 
