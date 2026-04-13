@@ -106,15 +106,16 @@ fi
 # Install my zshrc config
 cat ./.zshrc > ~/.zshrc
 
+INSTALL_MARKER="$HOME/.oh-my-zsh/.install_complete"
 # Install Oh-My-ZSH and zsh-nvm to load nvm lazily (more details in the .zshrc file)
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
+if [ ! -f "$INSTALL_MARKER" ]; then
 	export RUNZSH="no"
 	# to prevent oh-my-zsh from prompting if we want to set zsh as default
 	export SHELL=$(which zsh)
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
-
 	mkdir -p ~/.oh-my-zsh/custom/plugins/
 	git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+	touch "$INSTALL_MARKER"
 fi
 
 zsh -i -c "source ~/debian_setup/setup1.sh; exec zsh;"
