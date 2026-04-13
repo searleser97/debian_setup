@@ -1,7 +1,7 @@
 set -e
 
 IS_CODESPACES=false
-if [ "${CODESPACES:-}" == "true" || -n "${CODESPACE_NAME:-}" ]; then
+if [[ "${CODESPACES:-}" == "true" || -n "${CODESPACE_NAME:-}" ]]; then
   IS_CODESPACES=true
 fi
 
