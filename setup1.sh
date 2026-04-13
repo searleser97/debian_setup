@@ -26,3 +26,5 @@ if [ ! $IS_CODESPACES ]; then
 	# sudo chsh "$(id -un)" --shell $(which zsh)
 	# az login
 fi
+
+echo "completed setup successfully"
