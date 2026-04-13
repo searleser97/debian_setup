@@ -9,7 +9,7 @@ fi
 # install ping command 
 #sudo chmod u+s /bin/ping
 sudo apt update
-sudo apt install iputils-ping
+sudo apt install iputils-ping -y
 # Install my gitconfig settings
 cp ./.gitconfig ~/.gitconfig
 # Install nala
