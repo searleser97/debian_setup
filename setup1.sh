@@ -1,5 +1,10 @@
 set -e
 
+IS_CODESPACES=false
+if [ "${CODESPACES:-}" == "true" || -n "${CODESPACE_NAME:-}" ]; then
+  IS_CODESPACES=true
+fi
+
 export NVM_DIR="$HOME/.nvm"
 source "$NVM_DIR/nvm.sh"
 nvm install --lts
@@ -15,7 +20,9 @@ cargo install git-delta
 dotnet tool install -g git-credential-manager
 git-credential-manager configure
 
-# set ZShell as default terminal
-chsh -s $(which zsh)
-# sudo chsh "$(id -un)" --shell $(which zsh)
-# az login
+if [ ! $IS_CODESPACES ]; then
+	# set ZShell as default terminal
+	chsh -s $(which zsh)
+	# sudo chsh "$(id -un)" --shell $(which zsh)
+	# az login
+fi
