@@ -25,6 +25,8 @@ if [ ! $IS_CODESPACES ]; then
 	chsh -s $(which zsh)
 	# sudo chsh "$(id -un)" --shell $(which zsh)
 	# az login
+else
+	sudo chsh -s $(which zsh) $(whoami)
 fi
 
 echo "completed setup successfully"
