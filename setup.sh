@@ -6,6 +6,12 @@ if grep -qi microsoft /proc/version; then
   ISWSL="yes"
 fi
 
+IS_CODESPACES=false
+if [[ "${CODESPACES:-}" == "true" || -n "${CODESPACE_NAME:-}" ]]; then
+  IS_CODESPACES=true
+fi
+
+
 # install ping command 
 #sudo chmod u+s /bin/ping
 sudo apt update
@@ -38,10 +44,13 @@ if [ ! -f "$HOME/.cargo/bin/cargo" ]; then
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 fi
 
-# Roslyn lsp server for .NET C# requires more watch instances than the default in linux
-echo "fs.inotify.max_user_instances=8192" | sudo tee -a /etc/sysctl.conf 
-echo "fs.inotify.max_user_watches=1048576" | sudo tee -a /etc/sysctl.conf
-sudo sysctl -p
+if ! $IS_CODESPACES; then
+	# Roslyn lsp server for .NET C# requires more watch instances than the default in linux
+	echo "fs.inotify.max_user_instances=8192" | sudo tee -a /etc/sysctl.conf 
+	echo "fs.inotify.max_user_watches=1048576" | sudo tee -a /etc/sysctl.conf
+	sudo sysctl -p
+fi
+
 # Install tmux config
 cat ./.tmux.conf > ~/.tmux.conf
 # install github cli
