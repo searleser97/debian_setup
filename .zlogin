@@ -1,14 +1,15 @@
-if command -v tmux &> /dev/null && [ -n "$SSH_CONNECTION" ] && [ -z "$TMUX" ]; then
+if command -v zellij &> /dev/null && [ -n "$SSH_CONNECTION" ] && [ -z "$ZELLIJ" ]; then
   echo
-  if tmux has-session 2>/dev/null; then
-    echo "Active tmux sessions:"
+  local sessions=$(zellij list-sessions --short 2>/dev/null)
+  if [ -n "$sessions" ]; then
+    echo "Active zellij sessions:"
     echo
-    tmux list-sessions
+    zellij list-sessions
     echo
-    echo "Hint: attach with  tmux attach -t <session-id>   (or just: tmux attach)"
+    echo "Hint: attach with  zellij attach <session-name>   (or just: zellij attach)"
   else
-    echo "No active tmux sessions."
-    echo "Hint: start one with  tmux"
+    echo "No active zellij sessions."
+    echo "Hint: start one with  zellij"
   fi
   echo
 fi

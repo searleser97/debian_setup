@@ -1,0 +1,13 @@
+// Default shell
+default_shell "zsh"
+
+// Mouse support (equivalent to tmux "set -g mouse on")
+// mouse_mode is true by default, but we set it explicitly for clarity
+// mouse_mode true
+
+// No pane frames for a cleaner look
+pane_frames false
+
+// Use a bare layout with no status/tab bars (equivalent to tmux "set -g status off")
+// To achieve this, we use a custom layout below instead of the default
+default_layout "bare"

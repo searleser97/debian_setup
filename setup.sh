@@ -23,7 +23,7 @@ cp ./.gitconfig ~/.gitconfig
 sudo apt install nala -y
 # libatomic1 is required for nodejs
 # libicu-dev is required for dotnet git credential manager
-sudo nala install vim zsh curl wget git libatomic1 build-essential libicu-dev tmux ripgrep python3-venv fd-find unzip apt-transport-https ca-certificates gnupg lsb-release -y
+sudo nala install vim zsh curl wget git libatomic1 build-essential libicu-dev ripgrep python3-venv fd-find unzip apt-transport-https ca-certificates gnupg lsb-release -y
 # Install/Update neovim nightly
 curl -Lo /tmp/nvim-linux-x86_64.tar.gz https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.tar.gz
 sudo rm -rf /opt/nvim-linux-x86_64
@@ -50,8 +50,20 @@ if [ ! $IS_CODESPACES ]; then
 	sudo sysctl -p
 fi
 
-# Install tmux config
-cat ./.tmux.conf > ~/.tmux.conf
+# Install zellij (prebuilt binary)
+if [ ! -f "/usr/local/bin/zellij" ]; then
+	ZELLIJ_VERSION=$(curl -sL https://api.github.com/repos/zellij-org/zellij/releases/latest | grep '"tag_name"' | sed 's/.*"v\(.*\)".*/\1/')
+	curl -Lo /tmp/zellij.tar.gz "https://github.com/zellij-org/zellij/releases/download/v${ZELLIJ_VERSION}/zellij-x86_64-unknown-linux-musl.tar.gz"
+	tar -xzf /tmp/zellij.tar.gz -C /tmp
+	chmod +x /tmp/zellij
+	sudo mv /tmp/zellij /usr/local/bin/zellij
+	rm -f /tmp/zellij.tar.gz
+fi
+
+# Install zellij config
+mkdir -p ~/.config/zellij/layouts
+cat ./.zellij.kdl > ~/.config/zellij/config.kdl
+cat ./.zellij-layouts/bare.kdl > ~/.config/zellij/layouts/bare.kdl
 # install github cli
 if [ ! -f "/usr/bin/gh" ]; then
 	(type -p wget >/dev/null || (sudo apt update && sudo apt install wget -y)) \
