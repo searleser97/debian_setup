@@ -80,6 +80,23 @@ fd() {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# zj        → create next available session (1, 2, 3...)
+# zj list   → list sessions
+# zj <N>    → attach to session N
+zj() {
+  if [ "$1" = "list" ]; then
+    zellij list-sessions
+  elif [ -n "$1" ]; then
+    zellij attach "$1"
+  else
+    local i=1
+    while zellij list-sessions --short 2>/dev/null | grep -qx "$i"; do
+      i=$((i + 1))
+    done
+    zellij -s "$i"
+  fi
+}
+
 # Copilot alias with allowed tools
 alias copilot="copilot --allow-tool 'shell(git add)' --allow-tool 'shell(git commit)' --allow-tool 'shell(git push)' --allow-tool 'shell(git pull)' --allow-tool 'shell(rm)' --allow-tool write --allow-tool 'shell(rg)' --allow-tool 'shell(fd)' --allow-tool 'shell(grep)' --allow-tool 'shell(xargs)' --allow-tool 'shell(sed)' --allow-tool 'shell(awk)' --allow-tool 'shell(cat)' --allow-tool 'shell(dotnet)' --allow-tool 'shell(git merge-base)' --allow-tool 'shell(jq)' --allow-tool 'shell(git rm)' --allow-tool 'shell(git mv)'"
 
