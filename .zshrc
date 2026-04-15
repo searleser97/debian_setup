@@ -87,6 +87,7 @@ zj() {
   if [ "$1" = "list" ]; then
     zellij list-sessions
   elif [ -n "$1" ]; then
+    printf '\033]0;%s\007' "$1"
     zellij attach "$1"
   else
     local i=1
