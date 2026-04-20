@@ -101,6 +101,9 @@ zj() {
 # Copilot alias with allowed tools
 alias copilot="copilot --allow-tool 'shell(git add)' --allow-tool 'shell(git commit)' --allow-tool 'shell(git push)' --allow-tool 'shell(git pull)' --allow-tool 'shell(rm)' --allow-tool write --allow-tool 'shell(rg)' --allow-tool 'shell(fd)' --allow-tool 'shell(grep)' --allow-tool 'shell(xargs)' --allow-tool 'shell(sed)' --allow-tool 'shell(awk)' --allow-tool 'shell(cat)' --allow-tool 'shell(dotnet)' --allow-tool 'shell(git merge-base)' --allow-tool 'shell(jq)' --allow-tool 'shell(git rm)' --allow-tool 'shell(git mv)'"
 
+# Launch nvim in copilot mode
+alias ai='nvim --cmd "lua vim.g.copilot_mode = true"'
+
 # Git credential override (bypasses repo-level .git/config resets)
 export GIT_CONFIG_COUNT=1
 export GIT_CONFIG_KEY_0=credential.helper
