@@ -108,3 +108,6 @@ alias ai='nvim --cmd "lua vim.g.copilot_mode = true"'
 export GIT_CONFIG_COUNT=1
 export GIT_CONFIG_KEY_0=credential.helper
 export GIT_CONFIG_VALUE_0=store
+
+# Use gh CLI for git auth instead of GITHUB_TOKEN env var
+unset GITHUB_TOKEN
