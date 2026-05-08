@@ -16,6 +16,7 @@ if [ ! -d "$HOME/.fzf" ]; then
 fi
 # Install git-delta
 cargo install git-delta
+cargo install cargo-binstall
 cargo binstall tree-sitter-cli
 # Install git credential manager
 dotnet tool install -g git-credential-manager
