@@ -22,6 +22,9 @@ cargo binstall tree-sitter-cli
 dotnet tool install -g git-credential-manager
 git-credential-manager configure
 
+# Install mermaid-cli to diagnose issues with syntax related to them in neovim
+npm install -g @mermaid-js/mermaid-cli
+
 if [ ! $IS_CODESPACES ]; then
 	# set ZShell as default terminal
 	chsh -s $(which zsh)
