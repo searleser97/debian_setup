@@ -22,9 +22,6 @@ $HOME/.cargo/bin/cargo binstall tree-sitter-cli
 $HOME/.dotnet/dotnet tool install -g git-credential-manager
 $HOME/.dotnet/tools/git-credential-manager configure
 
-# Install mermaid-cli to diagnose issues with syntax related to them in neovim
-npm install -g @mermaid-js/mermaid-cli
-
 pip install termaid
 
 if [ $IS_CODESPACES = "false" ]; then
