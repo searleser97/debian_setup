@@ -19,7 +19,7 @@ cargo install git-delta
 cargo install cargo-binstall
 cargo binstall tree-sitter-cli
 # Install git credential manager
-dotnet tool install -g git-credential-manager
+$HOME/.dotnet/dotnet tool install -g git-credential-manager
 git-credential-manager configure
 
 # Install mermaid-cli to diagnose issues with syntax related to them in neovim
