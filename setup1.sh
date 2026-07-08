@@ -15,12 +15,12 @@ if [ ! -d "$HOME/.fzf" ]; then
 	~/.fzf/install --all
 fi
 # Install git-delta
-cargo install git-delta
-cargo install cargo-binstall
-cargo binstall tree-sitter-cli
+$HOME/.cargo/bin/cargo install git-delta
+$HOME/.cargo/bin/cargo install cargo-binstall
+$HOME/.cargo/bin/cargo binstall tree-sitter-cli
 # Install git credential manager
 $HOME/.dotnet/dotnet tool install -g git-credential-manager
-git-credential-manager configure
+$HOME/.dotnet/tools/git-credential-manager configure
 
 # Install mermaid-cli to diagnose issues with syntax related to them in neovim
 npm install -g @mermaid-js/mermaid-cli
