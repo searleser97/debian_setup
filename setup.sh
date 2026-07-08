@@ -96,6 +96,7 @@ if [ ! -f "$HOME/.dotnet/dotnet" ]; then
 	chmod +x ~/.dotnet/dotnet-install.sh
 	~/.dotnet/dotnet-install.sh --channel 8.0
 	~/.dotnet/dotnet-install.sh --channel 9.0
+	~/.dotnet/dotnet-install.sh --channel 10.0
 fi
 
 if [ "$ISWSL" = "yes" ]; then
