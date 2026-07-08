@@ -135,7 +135,8 @@ if [ ! -f "$INSTALL_MARKER" ]; then
 	touch "$INSTALL_MARKER"
 fi
 
-zsh -i -c "source ~/debian_setup/setup1.sh; exec zsh;"
+# zsh -i -c "source ~/debian_setup/setup1.sh; exec zsh;"
+exec zsh ~/debian_setup/setup1.sh
 
 if [ "$ISWSL" = "no" ] && [ "$IS_CODESPACES" = "false"] ; then
 	# Install grub-customizer
