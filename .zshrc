@@ -111,3 +111,7 @@ export GIT_CONFIG_VALUE_0=store
 
 # Use gh CLI for git auth instead of GITHUB_TOKEN env var
 unset GITHUB_TOKEN
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
