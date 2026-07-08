@@ -22,7 +22,11 @@ $HOME/.cargo/bin/cargo binstall tree-sitter-cli
 $HOME/.dotnet/dotnet tool install -g git-credential-manager
 $HOME/.dotnet/tools/git-credential-manager configure
 
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
 pyenv global 3.12
+
 python -m pip install termaid
 
 if [ $IS_CODESPACES = "false" ]; then
