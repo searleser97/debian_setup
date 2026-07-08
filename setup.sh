@@ -144,7 +144,8 @@ if [ ! -f "$HOME/.pyenv/bin/pyenv" ]; then
 	eval "$(pyenv init - bash)"
 fi
 
-zsh -i -c "source ~/debian_setup/setup1.sh; exec zsh;"
+# zsh -i -c "source ~/debian_setup/setup1.sh; exec zsh;"
+exec zsh -i ~/debian_setup/setup1.sh
 
 if [ "$ISWSL" = "no" ] && [ "$IS_CODESPACES" = "false"] ; then
 	# Install grub-customizer
