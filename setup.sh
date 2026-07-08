@@ -139,9 +139,6 @@ fi
 # Install pyenv
 if [ ! -f "$HOME/.pyenv/bin/pyenv" ]; then
 	curl -fsSL https://pyenv.run | bash
-	export PYENV_ROOT="$HOME/.pyenv"
-	[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-	eval "$(pyenv init - bash)"
 fi
 
 # zsh -i -c "source ~/debian_setup/setup1.sh; exec zsh;"
