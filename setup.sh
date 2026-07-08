@@ -136,6 +136,12 @@ if [ ! -f "$INSTALL_MARKER" ]; then
 	touch "$INSTALL_MARKER"
 fi
 
+# Install pyenv
+if [ ! -f "$HOME/.pyenv/bin/pyenv" ]; then
+	curl -fsSL https://pyenv.run | bash
+	
+fi
+
 zsh -i -c "source ~/debian_setup/setup1.sh; exec zsh;"
 
 if [ "$ISWSL" = "no" ] && [ "$IS_CODESPACES" = "false"] ; then
