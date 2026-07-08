@@ -27,7 +27,7 @@ npm install -g @mermaid-js/mermaid-cli
 
 pip install termaid
 
-if [ ! $IS_CODESPACES ]; then
+if [ $IS_CODESPACES = "false" ]; then
 	# set ZShell as default terminal
 	chsh -s $(which zsh)
 	# sudo chsh "$(id -un)" --shell $(which zsh)
